@@ -7,21 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EF7B46628D2080C009E7A5B /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7B46528D2080C009E7A5B /* FavoritosViewController.swift */; };
+		2EF7B46828D20816009E7A5B /* FavoritosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7B46728D20816009E7A5B /* FavoritosTableViewCell.swift */; };
 		EC58E03228CD0EB8000989B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E03128CD0EB8000989B0 /* AppDelegate.swift */; };
 		EC58E03428CD0EB8000989B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E03328CD0EB8000989B0 /* SceneDelegate.swift */; };
-		EC58E03628CD0EB8000989B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E03528CD0EB8000989B0 /* ViewController.swift */; };
+		EC58E03628CD0EB8000989B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E03528CD0EB8000989B0 /* HomeViewController.swift */; };
 		EC58E03B28CD0EB9000989B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC58E03A28CD0EB9000989B0 /* Assets.xcassets */; };
 		EC58E03E28CD0EB9000989B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC58E03C28CD0EB9000989B0 /* LaunchScreen.storyboard */; };
+		EC58E05A28D1F992000989B0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E05928D1F992000989B0 /* HomeView.swift */; };
+		EC58E05F28D1F9EE000989B0 /* HomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E05E28D1F9EE000989B0 /* HomeViewDelegate.swift */; };
+		EC58E06128D1FA31000989B0 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06028D1FA31000989B0 /* CustomCollectionViewCell.swift */; };
+		EC58E06528D1FEB1000989B0 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06428D1FEB1000989B0 /* MainTabBarViewController.swift */; };
+		EC58E06728D1FEBA000989B0 /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06628D1FEBA000989B0 /* UIView+Preview.swift */; };
+		EC58E06928D1FEBD000989B0 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06828D1FEBD000989B0 /* UIViewController+Preview.swift */; };
+		EC58E06B28D24942000989B0 /* NovaViagemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06A28D24942000989B0 /* NovaViagemViewController.swift */; };
+		EC58E06D28D24953000989B0 /* NovaViagemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06C28D24953000989B0 /* NovaViagemView.swift */; };
+		EC58E06F28D2496F000989B0 /* LugaresInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06E28D2496F000989B0 /* LugaresInfoView.swift */; };
+		EC58E07128D24977000989B0 /* LugaresInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07028D24977000989B0 /* LugaresInfoViewController.swift */; };
+		EC58E07328D249AE000989B0 /* ColocarDestinosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07228D249AE000989B0 /* ColocarDestinosViewController.swift */; };
+		EC58E07528D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07428D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift */; };
+		EC58E07728D24AD3000989B0 /* ColocarDestinosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07628D24AD3000989B0 /* ColocarDestinosView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EF7B46528D2080C009E7A5B /* FavoritosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
+		2EF7B46728D20816009E7A5B /* FavoritosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewCell.swift; sourceTree = "<group>"; };
 		EC58E02E28CD0EB8000989B0 /* CarapacaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarapacaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC58E03128CD0EB8000989B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC58E03328CD0EB8000989B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EC58E03528CD0EB8000989B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC58E03528CD0EB8000989B0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EC58E03A28CD0EB9000989B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC58E03D28CD0EB9000989B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC58E03F28CD0EB9000989B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC58E05928D1F992000989B0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EC58E05E28D1F9EE000989B0 /* HomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDelegate.swift; sourceTree = "<group>"; };
+		EC58E06028D1FA31000989B0 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC58E06428D1FEB1000989B0 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		EC58E06628D1FEBA000989B0 /* UIView+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
+		EC58E06828D1FEBD000989B0 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
+		EC58E06A28D24942000989B0 /* NovaViagemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovaViagemViewController.swift; sourceTree = "<group>"; };
+		EC58E06C28D24953000989B0 /* NovaViagemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovaViagemView.swift; sourceTree = "<group>"; };
+		EC58E06E28D2496F000989B0 /* LugaresInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LugaresInfoView.swift; sourceTree = "<group>"; };
+		EC58E07028D24977000989B0 /* LugaresInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LugaresInfoViewController.swift; sourceTree = "<group>"; };
+		EC58E07228D249AE000989B0 /* ColocarDestinosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColocarDestinosViewController.swift; sourceTree = "<group>"; };
+		EC58E07428D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrucaoDoRoteiroViewController.swift; sourceTree = "<group>"; };
+		EC58E07628D24AD3000989B0 /* ColocarDestinosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColocarDestinosView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +68,9 @@
 		EC58E02528CD0EB8000989B0 = {
 			isa = PBXGroup;
 			children = (
+				EC58E06228D1FA3B000989B0 /* Delegate */,
+				EC58E05B28D1F999000989B0 /* Views */,
+				EC58E06328D1FA48000989B0 /* ViewControllers */,
 				EC58E03028CD0EB8000989B0 /* CarapacaApp */,
 				EC58E02F28CD0EB8000989B0 /* Products */,
 			);
@@ -56,12 +89,48 @@
 			children = (
 				EC58E03128CD0EB8000989B0 /* AppDelegate.swift */,
 				EC58E03328CD0EB8000989B0 /* SceneDelegate.swift */,
-				EC58E03528CD0EB8000989B0 /* ViewController.swift */,
 				EC58E03A28CD0EB9000989B0 /* Assets.xcassets */,
 				EC58E03C28CD0EB9000989B0 /* LaunchScreen.storyboard */,
 				EC58E03F28CD0EB9000989B0 /* Info.plist */,
+				EC58E06428D1FEB1000989B0 /* MainTabBarViewController.swift */,
+				EC58E06628D1FEBA000989B0 /* UIView+Preview.swift */,
+				EC58E06828D1FEBD000989B0 /* UIViewController+Preview.swift */,
 			);
 			path = CarapacaApp;
+			sourceTree = "<group>";
+		};
+		EC58E05B28D1F999000989B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC58E05928D1F992000989B0 /* HomeView.swift */,
+				EC58E06028D1FA31000989B0 /* CustomCollectionViewCell.swift */,
+				EC58E06C28D24953000989B0 /* NovaViagemView.swift */,
+				EC58E07628D24AD3000989B0 /* ColocarDestinosView.swift */,
+				EC58E06E28D2496F000989B0 /* LugaresInfoView.swift */,
+				2EF7B46728D20816009E7A5B /* FavoritosTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EC58E06228D1FA3B000989B0 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				EC58E05E28D1F9EE000989B0 /* HomeViewDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		EC58E06328D1FA48000989B0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC58E03528CD0EB8000989B0 /* HomeViewController.swift */,
+				EC58E06A28D24942000989B0 /* NovaViagemViewController.swift */,
+				EC58E07228D249AE000989B0 /* ColocarDestinosViewController.swift */,
+				EC58E07028D24977000989B0 /* LugaresInfoViewController.swift */,
+				EC58E07428D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift */,
+				2EF7B46528D2080C009E7A5B /* FavoritosViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +203,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC58E03628CD0EB8000989B0 /* ViewController.swift in Sources */,
+				EC58E06928D1FEBD000989B0 /* UIViewController+Preview.swift in Sources */,
+				EC58E07328D249AE000989B0 /* ColocarDestinosViewController.swift in Sources */,
+				EC58E06B28D24942000989B0 /* NovaViagemViewController.swift in Sources */,
+				EC58E07728D24AD3000989B0 /* ColocarDestinosView.swift in Sources */,
+				EC58E03628CD0EB8000989B0 /* HomeViewController.swift in Sources */,
+				EC58E06128D1FA31000989B0 /* CustomCollectionViewCell.swift in Sources */,
+				EC58E05A28D1F992000989B0 /* HomeView.swift in Sources */,
+				2EF7B46628D2080C009E7A5B /* FavoritosViewController.swift in Sources */,
+				EC58E06F28D2496F000989B0 /* LugaresInfoView.swift in Sources */,
+				EC58E06528D1FEB1000989B0 /* MainTabBarViewController.swift in Sources */,
+				EC58E05F28D1F9EE000989B0 /* HomeViewDelegate.swift in Sources */,
+				EC58E06728D1FEBA000989B0 /* UIView+Preview.swift in Sources */,
+				EC58E06D28D24953000989B0 /* NovaViagemView.swift in Sources */,
 				EC58E03228CD0EB8000989B0 /* AppDelegate.swift in Sources */,
+				2EF7B46828D20816009E7A5B /* FavoritosTableViewCell.swift in Sources */,
+				EC58E07528D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift in Sources */,
+				EC58E07128D24977000989B0 /* LugaresInfoViewController.swift in Sources */,
 				EC58E03428CD0EB8000989B0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +366,7 @@
 				INFOPLIST_FILE = CarapacaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,7 +394,7 @@
 				INFOPLIST_FILE = CarapacaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
