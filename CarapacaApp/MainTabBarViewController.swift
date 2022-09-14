@@ -14,20 +14,20 @@ class MainTabBarViewController: UITabBarController {
         
         let vc1 = UINavigationController(rootViewController: HomeViewController())
 //        let vc2 = UINavigationController(rootViewController: ExplorarViewController())
-//        let vc3 = UINavigationController(rootViewController: FavoritosViewController())
+        let vc3 = UINavigationController(rootViewController: FavoritosViewController())
         
         vc1.tabBarItem.image = UIImage(systemName: "map")
 //        vc2.tabBarItem.image = UIImage(systemName: "globe.americas.fill")
-//        vc3.tabBarItem.image = UIImage(systemName: "heart.fill")
+        vc3.tabBarItem.image = UIImage(systemName: "heart.fill")
         
         tabBar.tintColor = .systemGreen
         
         vc1.title = "Roteiro"
 //        vc2.title = "Explorar"
-//        vc3.title = "Favoritos"
+        vc3.title = "Favoritos"
  
         
-        setViewControllers([vc1], animated: true)
+        setViewControllers([vc1, vc3], animated: true)
         
     }
     
