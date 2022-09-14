@@ -13,7 +13,7 @@ class FavoritosTableViewCell: UITableViewCell {
     
     private let lugarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "travel")
+        imageView.image = UIImage(named: "praia")
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -41,7 +41,7 @@ class FavoritosTableViewCell: UITableViewCell {
         //grayView.layer.cornerRadius = 16
         
         contentView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
-        contentView.layer.cornerRadius = 40
+        contentView.layer.cornerRadius = 16
         contentView.addSubview(lugarImageView)
         contentView.addSubview(lugarLabel)
         contentView.addSubview(bairroLabel)
@@ -59,17 +59,22 @@ class FavoritosTableViewCell: UITableViewCell {
         
         let imageSize = contentView.frame.size.height-16
         
-        lugarLabel.frame = CGRect(x: 96,
+        //lugarImageView.layer.borderWidth = 1
+        lugarImageView.layer.masksToBounds = false
+        lugarImageView.layer.cornerRadius = 16
+        lugarImageView.clipsToBounds = true
+        
+        lugarLabel.frame = CGRect(x: 80,
                                   y: -12,
                                   width: contentView.frame.size.width - 10,
                                   height: contentView.frame.size.height)
         
-        bairroLabel.frame = CGRect(x: 96,
+        bairroLabel.frame = CGRect(x: 80,
                                   y: 12,
                                   width: contentView.frame.size.width - 10,
                                   height: contentView.frame.size.height)
         
-        lugarImageView.frame = CGRect(x: 16,
+        lugarImageView.frame = CGRect(x: 8,
                                   y: 8,
                                   width: imageSize,
                                   height: imageSize)
