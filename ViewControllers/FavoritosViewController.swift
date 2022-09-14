@@ -15,8 +15,6 @@ class FavoritosViewController: UIViewController {
         let table = UITableView(frame: .zero, style: .grouped)
         table.translatesAutoresizingMaskIntoConstraints = false
         table.separatorStyle = .none
-        table.separatorColor = .white
-        
         table.register(FavoritosTableViewCell.self, forCellReuseIdentifier: FavoritosTableViewCell.identifier)
         
         return table
@@ -25,24 +23,29 @@ class FavoritosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        self.view.backgroundColor = UIColor.white
+        
         view.addSubview(favoritosTableView)
         view.addSubview(labelTitulo)
         
-        configureTableView()
+        configureAttributes()
         setTableViewDelegate()
         setupConstraints()
         
-        labelTitulo.text = "Favoritos"
-        title = "Favoritos"
+        //title = "Favoritos"
         //self.navigationItem.title = "Favoritos"
         self.navigationController?.navigationBar.backgroundColor = .white
         
     }
     
-    //funcao para configurar a tableview
-    func configureTableView() {
+    //funcao para configurar os elementos
+    func configureAttributes() {
         favoritosTableView.rowHeight = 80
+        
+        labelTitulo.textAlignment = .left
+        labelTitulo.text = "Favoritos"
+        labelTitulo.textColor = .black
+        labelTitulo.font = UIFont.boldSystemFont(ofSize: 24)
     }
     
     //funcao para iniciar o delegate
@@ -54,14 +57,23 @@ class FavoritosViewController: UIViewController {
     //funcao para criar as constraints 
     func setupConstraints() {
         favoritosTableView.translatesAutoresizingMaskIntoConstraints = false
-        favoritosTableView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
+        favoritosTableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 44).isActive = true
         favoritosTableView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
         favoritosTableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
         favoritosTableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
         
-        favoritosTableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true; favoritosTableView.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor).isActive = true; favoritosTableView.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor).isActive = true;   favoritosTableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        favoritosTableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 44).isActive = true; favoritosTableView.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor).isActive = true; favoritosTableView.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor).isActive = true;   favoritosTableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+
+        labelTitulo.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            labelTitulo.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 16),
+            labelTitulo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+            labelTitulo.bottomAnchor.constraint(equalTo: favoritosTableView.topAnchor, constant: 8)
+        ])
+        
         
     }
+
 }
 
     //extensao criada para configurar a tableview
