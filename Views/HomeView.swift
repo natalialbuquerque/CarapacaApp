@@ -32,7 +32,7 @@ class HomeView: UIView {
         
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.backgroundColor = .white
         setupViewHierarchy()
         setupConstraints()
         setUpAttributes()
@@ -79,7 +79,7 @@ class HomeView: UIView {
 
             stackView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                stackView.topAnchor.constraint(equalTo: self.topAnchor),
+                stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
                 stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
                 stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
                 stackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
@@ -121,7 +121,6 @@ class HomeView: UIView {
                 meusRoteirosCollectionView.topAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.topAnchor),
                 meusRoteirosCollectionView.leadingAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.leadingAnchor, constant:  16),
                 meusRoteirosCollectionView.trailingAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.trailingAnchor)
-
             ])
         }
         
@@ -140,12 +139,16 @@ class HomeView: UIView {
             title2Label.text = "Crie as melhores viagens de forma simples"
             title2Label.textColor = .white
             
-            criarRoteiroButton.setTitle("Criar novo roteiro!", for: .normal)
+            criarRoteiroButton.setTitle("   Criar novo roteiro!", for: .normal)
             criarRoteiroButton.setTitleColor(.white, for: .normal)
             criarRoteiroButton.tintColor =  UIColor(red: 0.14, green: 0.69, blue: 0.55, alpha: 1.00)
             criarRoteiroButton.layer.cornerCurve = .continuous
-            criarRoteiroButton.layer.cornerRadius = 35
+            criarRoteiroButton.layer.cornerRadius = 64 / 2
+//            criarRoteiroButton.layer.cornerRadius = 35
             criarRoteiroButton.clipsToBounds = true
+            let icon = UIImage(systemName: "plus.circle")
+                        criarRoteiroButton.setImage(icon, for: .normal)
+                        criarRoteiroButton.imageView?.contentMode = .scaleAspectFit
             
             
             meusRoteirosLabel.textAlignment = .left
@@ -173,11 +176,7 @@ class HomeView: UIView {
 //            meusRoteirosContainer.backgroundColor = .purple
 //            meusRoteirosCollectionViewContainer.backgroundColor = .red
         }
-   
-    
-    
-    
-    
+
     
 }
 // MARK: - Preview
@@ -189,7 +188,7 @@ struct HomeView_Preview: PreviewProvider {
     static var previews: some View {
         // view controller using programmatic UI
         Group {
-            HomeView().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.portrait)
+            HomeView().showPreview().previewDevice("iPhone SE (2nd generation)").previewInterfaceOrientation(.portrait)
 //            ViewController().showPreview().previewDevice("iPhone SE (3rd generation)").previewInterfaceOrientation(.landscapeLeft)
         }
     }

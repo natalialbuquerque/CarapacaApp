@@ -14,10 +14,6 @@ class ColocarDestinosViewController: UIViewController {
         super.viewDidLoad()
         self.view = colocarDestinosView
     }
-
-
-
-
 }
 // MARK: - Preview
 #if DEBUG

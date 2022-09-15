@@ -13,6 +13,7 @@ class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         let vc1 = UINavigationController(rootViewController: HomeViewController())
+        vc1.navigationBar.barTintColor = .white
 //        let vc2 = UINavigationController(rootViewController: ExplorarViewController())
         let vc3 = UINavigationController(rootViewController: FavoritosViewController())
         

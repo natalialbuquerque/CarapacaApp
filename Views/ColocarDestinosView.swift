@@ -95,14 +95,17 @@ class ColocarDestinosView: UIView {
         adicionarButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             adicionarButton.trailingAnchor.constraint(equalTo: adicionarButtonContainer.trailingAnchor, constant: -16),
-            adicionarButton.topAnchor.constraint(equalTo: roteiroTextField.bottomAnchor, constant: 34)
+            adicionarButton.topAnchor.constraint(equalTo: roteiroTextField.bottomAnchor, constant: 34),
+            adicionarButton.heightAnchor.constraint(equalToConstant: 44)
         ])
         
         proximoButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             proximoButton.centerXAnchor.constraint(equalTo: proximoButtonContainer.centerXAnchor),
             proximoButton.leadingAnchor.constraint(equalTo: proximoButtonContainer.leadingAnchor, constant: 16),
-            proximoButton.trailingAnchor.constraint(equalTo: proximoButtonContainer.trailingAnchor, constant: -16)
+            proximoButton.trailingAnchor.constraint(equalTo: proximoButtonContainer.trailingAnchor, constant: -16),
+            proximoButton.heightAnchor.constraint(equalToConstant: 44)
+
         ])
         
     }
@@ -152,15 +155,17 @@ class ColocarDestinosView: UIView {
         adicionarButton.setTitleColor(.white, for: .normal)
         adicionarButton.tintColor = .systemBlue
         adicionarButton.layer.cornerCurve = .continuous
-        adicionarButton.layer.cornerRadius = 40
+        adicionarButton.layer.cornerRadius = 12
         adicionarButton.clipsToBounds = true
+        adicionarButton.tintColor =  UIColor(red: 0.05, green: 0.38, blue: 0.68, alpha: 1.00)
         
         proximoButton.setTitle("  Próximo  ", for: .normal)
         proximoButton.setTitleColor(.white, for: .normal)
         proximoButton.tintColor = .systemGreen
         proximoButton.layer.cornerCurve = .continuous
-        proximoButton.layer.cornerRadius = 40
+        proximoButton.layer.cornerRadius = 44 / 2
         proximoButton.clipsToBounds = true
+        proximoButton.tintColor =  UIColor(red: 0.14, green: 0.69, blue: 0.55, alpha: 1.00)
         
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     let homeView = HomeView()
+    weak var delegate: HomeViewDelegate?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +42,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     @objc func tappedButton(sender: UIButton){
         print("Apertou o botao")
-//        delegate?.criarRoteiro()
+        delegate?.criarRoteiro()
+        
         let novaViagem = NovaViagemViewController()
-        present(novaViagem, animated: true, completion: nil)
+        navigationController?.pushViewController(novaViagem, animated: true)
     }
     
     

@@ -70,14 +70,17 @@ class NovaViagemView: UIView {
 //        roteiroTextField.backgroundColor = UIColor.secondarySystemBackground
         roteiroTextField.backgroundColor = UIColor.init(red: 213.0/255.0, green: 207.0/255.0, blue: 207.0/255.0, alpha: 1)
         
-        
-        
+        let icon = UIImage(systemName: "arrow.right")
+        proximoButton.setImage(icon, for: .normal)
+        proximoButton.imageView?.contentMode = .scaleAspectFit
         proximoButton.setTitle("  Próximo  ", for: .normal)
         proximoButton.setTitleColor(.white, for: .normal)
         proximoButton.tintColor = UIColor(red: 0.10, green: 0.42, blue: 0.33, alpha: 1.00)
         proximoButton.layer.cornerCurve = .continuous
-        proximoButton.layer.cornerRadius = 20
+        proximoButton.layer.cornerRadius = 44 / 2
+//        proximoButton.layer.cornerRadius = 20
         proximoButton.clipsToBounds = true
+        
         
    
     }
@@ -110,7 +113,8 @@ class NovaViagemView: UIView {
         proximoButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             proximoButton.trailingAnchor.constraint(equalTo: proximoButtonContainer.trailingAnchor, constant: -16),
-            proximoButton.topAnchor.constraint(equalTo: roteiroTextField.bottomAnchor, constant: 34)
+            proximoButton.topAnchor.constraint(equalTo: roteiroTextField.bottomAnchor, constant: 34),
+            proximoButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
 

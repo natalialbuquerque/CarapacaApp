@@ -92,7 +92,6 @@
 				EC58E03A28CD0EB9000989B0 /* Assets.xcassets */,
 				EC58E03C28CD0EB9000989B0 /* LaunchScreen.storyboard */,
 				EC58E03F28CD0EB9000989B0 /* Info.plist */,
-				EC58E06428D1FEB1000989B0 /* MainTabBarViewController.swift */,
 				EC58E06628D1FEBA000989B0 /* UIView+Preview.swift */,
 				EC58E06828D1FEBD000989B0 /* UIViewController+Preview.swift */,
 			);
@@ -123,6 +122,7 @@
 		EC58E06328D1FA48000989B0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EC58E06428D1FEB1000989B0 /* MainTabBarViewController.swift */,
 				EC58E03528CD0EB8000989B0 /* HomeViewController.swift */,
 				EC58E06A28D24942000989B0 /* NovaViagemViewController.swift */,
 				EC58E07228D249AE000989B0 /* ColocarDestinosViewController.swift */,
