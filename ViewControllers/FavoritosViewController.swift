@@ -12,7 +12,7 @@ class FavoritosViewController: UIViewController {
     var labelTitulo = UILabel()
     
     var favoritosTableView: UITableView = {
-        let table = UITableView(frame: .zero, style: .grouped)
+        let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.separatorStyle = .none
         table.register(FavoritosTableViewCell.self, forCellReuseIdentifier: FavoritosTableViewCell.identifier)
@@ -58,8 +58,8 @@ class FavoritosViewController: UIViewController {
     func setupConstraints() {
         favoritosTableView.translatesAutoresizingMaskIntoConstraints = false
         favoritosTableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 44).isActive = true
-        favoritosTableView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
-        favoritosTableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
+        favoritosTableView.leftAnchor.constraint(equalTo:view.leftAnchor, constant: 16).isActive = true
+        favoritosTableView.rightAnchor.constraint(equalTo:view.rightAnchor, constant: -16).isActive = true
         favoritosTableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
         
         favoritosTableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 44).isActive = true; favoritosTableView.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor).isActive = true; favoritosTableView.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor).isActive = true;   favoritosTableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -85,7 +85,7 @@ class FavoritosViewController: UIViewController {
         
         func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
             let header = view as! UITableViewHeaderFooterView
-            header.textLabel?.textColor = UIColor.black
+            header.textLabel?.textColor = UIColor.systemGray
             header.contentView.backgroundColor = UIColor.white
         }
         
