@@ -129,32 +129,60 @@ class HomeView: UIView {
         func setUpAttributes(){
             // MARK: - Configuração dos atributos dos componentes
             bgHomeView.contentMode = .scaleAspectFill
+            bgHomeView.layer.cornerRadius = 16
+            bgHomeView.clipsToBounds = true
+            bgHomeView.layer.cornerCurve = .continuous
+            
+            class FontKit {
+
+             static func roundedFont(ofSize fontSize: CGFloat, weight: UIFont.Weight) -> UIFont {
+                let systemFont = UIFont.systemFont(ofSize: fontSize, weight: weight)
+                let font: UIFont
+
+                if #available(iOS 13.0, *) {
+                    if let descriptor = systemFont.fontDescriptor.withDesign(.rounded) {
+                        font = UIFont(descriptor: descriptor, size: fontSize)
+                    } else {
+                        font = systemFont
+                    }
+                } else {
+                    font = systemFont
+                }
+
+                return font
+             }
+            }
             
             title1Label.textAlignment = .left
             title1Label.text = "Olá, Mochileiro!"
-            title1Label.textColor = .white
-            title1Label.font = UIFont.boldSystemFont(ofSize: 24)
+            title1Label.textColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1.00)
+            title1Label.font = FontKit.roundedFont(ofSize: 28, weight: .medium)
             
             title2Label.textAlignment = .left
             title2Label.text = "Crie as melhores viagens de forma simples"
-            title2Label.textColor = .white
+            title2Label.textColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1.00)
+            title2Label.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
             
             criarRoteiroButton.setTitle("   Criar novo roteiro!", for: .normal)
             criarRoteiroButton.setTitleColor(.white, for: .normal)
             criarRoteiroButton.tintColor =  UIColor(red: 0.14, green: 0.69, blue: 0.55, alpha: 1.00)
+            criarRoteiroButton.titleLabel?.font = FontKit.roundedFont(ofSize: 17, weight: .semibold)
+            
             criarRoteiroButton.layer.cornerCurve = .continuous
             criarRoteiroButton.layer.cornerRadius = 64 / 2
 //            criarRoteiroButton.layer.cornerRadius = 35
             criarRoteiroButton.clipsToBounds = true
             let icon = UIImage(systemName: "plus.circle")
+            icon?.withTintColor(UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1.00))
                         criarRoteiroButton.setImage(icon, for: .normal)
                         criarRoteiroButton.imageView?.contentMode = .scaleAspectFit
             
             
             meusRoteirosLabel.textAlignment = .left
             meusRoteirosLabel.text = "Meus Roteiros"
-            meusRoteirosLabel.textColor = .black
-            meusRoteirosLabel.font = UIFont.boldSystemFont(ofSize: 22)
+            meusRoteirosLabel.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
+
+            meusRoteirosLabel.font = FontKit.roundedFont(ofSize: 20, weight: .semibold)
             
             
             stackView.axis = .vertical

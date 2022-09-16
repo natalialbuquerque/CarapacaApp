@@ -22,6 +22,7 @@ class ColocarDestinosView: UIView {
     let proximoButtonContainer = UIView()
     
     let stackView = UIStackView()
+    let stackView2 = UIStackView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,20 +38,20 @@ class ColocarDestinosView: UIView {
     
     func setupViewHierarchy(){
         // MARK: - Setup na hierarquia das subviews
-        self.addSubview(title1Label)
-        self.addSubview(title2Label)
-        self.addSubview(roteiroTextField)
-        self.addSubview(proximoButton)
-        self.addSubview(adicionarButton)
         self.addSubview(stackView)
         
         stackView.addArrangedSubview(title1LabelContainer)
         stackView.addArrangedSubview(title2LabelContainer)
-        stackView.addArrangedSubview(roteiroTextFieldContainer)
-        stackView.addArrangedSubview(adicionarButtonContainer)
+        stackView.addArrangedSubview(stackView2)
+//        stackView.addArrangedSubview(roteiroTextFieldContainer)
+//        stackView.addArrangedSubview(adicionarButtonContainer)
         stackView.addArrangedSubview(proximoButtonContainer)
         
+        stackView2.addArrangedSubview(roteiroTextFieldContainer)
+        stackView2.addArrangedSubview(adicionarButtonContainer)
+        
         title1LabelContainer.addSubview(title1Label)
+        title2LabelContainer.addSubview(title2Label)
         roteiroTextFieldContainer.addSubview(roteiroTextField)
         adicionarButtonContainer.addSubview(adicionarButton)
         proximoButtonContainer.addSubview(proximoButton)
@@ -60,43 +61,53 @@ class ColocarDestinosView: UIView {
     func setupConstraints(){
         // MARK: - Configuração das constraints de auto layout
         
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.topAnchor),
+            stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
         
+        stackView2.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            
+        ])
+        
         title1Label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            title1Label.leadingAnchor.constraint(equalTo: title1LabelContainer.leadingAnchor),
+            title1Label.leadingAnchor.constraint(equalTo: title1LabelContainer.leadingAnchor, constant: 16),
             title1Label.trailingAnchor.constraint(equalTo: title1LabelContainer.trailingAnchor),
             title1Label.topAnchor.constraint(equalTo: self.topAnchor, constant: 90),
-            title1Label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            title1Label.topAnchor.constraint(equalTo: title1LabelContainer.topAnchor),
+            title1Label.bottomAnchor.constraint(equalTo: title1LabelContainer.bottomAnchor)
         ])
         
         title2Label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            title2Label.topAnchor.constraint(equalTo: title1Label.bottomAnchor, constant: 16),
-            title2Label.leadingAnchor.constraint(equalTo: title2LabelContainer.leadingAnchor, constant: 16),
-            title2Label.trailingAnchor.constraint(equalTo: title2LabelContainer.trailingAnchor, constant: -16)
-            
+            title2Label.topAnchor.constraint(equalTo: title2LabelContainer.topAnchor, constant: 16),
+            title2Label.bottomAnchor.constraint(equalTo: title2LabelContainer.bottomAnchor),
+            title2Label.leadingAnchor.constraint(equalTo: title2LabelContainer.leadingAnchor, constant: 24)
+
         ])
-        
+
         roteiroTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            roteiroTextField.topAnchor.constraint(equalTo: title1Label.bottomAnchor, constant: 32),
+            roteiroTextField.topAnchor.constraint(equalTo: roteiroTextFieldContainer.topAnchor,constant: 4),
             roteiroTextField.leadingAnchor.constraint(equalTo: roteiroTextFieldContainer.leadingAnchor, constant: 16),
-            roteiroTextField.trailingAnchor.constraint(equalTo: roteiroTextFieldContainer.trailingAnchor, constant: -30)
+            roteiroTextField.bottomAnchor.constraint(equalTo: roteiroTextFieldContainer.bottomAnchor),
+            roteiroTextField.heightAnchor.constraint(equalToConstant: 44),
+            roteiroTextField.trailingAnchor.constraint(equalTo: adicionarButton.leadingAnchor, constant: -4)
         ])
         
         
         adicionarButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             adicionarButton.trailingAnchor.constraint(equalTo: adicionarButtonContainer.trailingAnchor, constant: -16),
-            adicionarButton.topAnchor.constraint(equalTo: roteiroTextField.bottomAnchor, constant: 34),
-            adicionarButton.heightAnchor.constraint(equalToConstant: 44)
+            adicionarButton.heightAnchor.constraint(equalToConstant: 44),
+            adicionarButton.bottomAnchor.constraint(equalTo: adicionarButtonContainer.bottomAnchor),
+            adicionarButton.topAnchor.constraint(equalTo: adicionarButtonContainer.topAnchor, constant: 4)
         ])
         
         proximoButton.translatesAutoresizingMaskIntoConstraints = false
@@ -104,42 +115,67 @@ class ColocarDestinosView: UIView {
             proximoButton.centerXAnchor.constraint(equalTo: proximoButtonContainer.centerXAnchor),
             proximoButton.leadingAnchor.constraint(equalTo: proximoButtonContainer.leadingAnchor, constant: 16),
             proximoButton.trailingAnchor.constraint(equalTo: proximoButtonContainer.trailingAnchor, constant: -16),
+            proximoButton.bottomAnchor.constraint(equalTo: proximoButtonContainer.bottomAnchor, constant: -128),
             proximoButton.heightAnchor.constraint(equalToConstant: 44)
-
         ])
         
     }
     
     func setUpAttributes(){
         // MARK: - Configuração dos atributos dos componentes
+        class FontKit {
+
+         static func roundedFont(ofSize fontSize: CGFloat, weight: UIFont.Weight) -> UIFont {
+            let systemFont = UIFont.systemFont(ofSize: fontSize, weight: weight)
+            let font: UIFont
+
+            if #available(iOS 13.0, *) {
+                if let descriptor = systemFont.fontDescriptor.withDesign(.rounded) {
+                    font = UIFont(descriptor: descriptor, size: fontSize)
+                } else {
+                    font = systemFont
+                }
+            } else {
+                font = systemFont
+            }
+
+            return font
+         }
+        }
+        
         title1Label.textAlignment = .left
         title1Label.text = "Quais cidades você quer curtir?"
         title1Label.textColor = .black
-        title1Label.font = UIFont.systemFont(ofSize: 28)
+        title1Label.font = FontKit.roundedFont(ofSize: 28, weight: .medium)
         title1Label.lineBreakMode = .byWordWrapping
         title1Label.numberOfLines = 2
         
         title2Label.textAlignment = .left
         title2Label.text = "Primeiro destino"
         title2Label.textColor = .gray
-        title2Label.font = UIFont.systemFont(ofSize: 12)
+        title2Label.font = FontKit.roundedFont(ofSize: 12, weight: .regular)
         title2Label.lineBreakMode = .byWordWrapping
         title2Label.numberOfLines = 1
         
         stackView.axis = .vertical
         stackView.alignment = .fill
-        stackView.distribution = .fillProportionally
-        stackView.spacing = 22
+        stackView.distribution = .fill
+        stackView.spacing = 0
         
-        roteiroTextField.placeholder = "Escolha uma cidade ou estado"
-        roteiroTextField.font = UIFont.systemFont(ofSize: 17)
+        stackView2.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = 0
+        
+        
+        
+        roteiroTextField.placeholder = "Escolha uma cidade ou estado  "
+        roteiroTextField.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
         roteiroTextField.backgroundColor = UIColor.white
-        roteiroTextField.borderStyle = .roundedRect
+//        roteiroTextField.borderStyle = .roundedRect
+        roteiroTextField.layer.cornerRadius = 12
         roteiroTextField.frame = CGRect(x: 0, y: 0, width: 343, height: 44)
-//        roteiroTextField.layer.borderColor = UIColor.gray.cgColor
-//        roteiroTextField.layer.borderWidth = 1
-//        roteiroTextField.backgroundColor = UIColor.secondarySystemBackground
-        roteiroTextField.backgroundColor = UIColor.init(red: 213.0/255.0, green: 207.0/255.0, blue: 207.0/255.0, alpha: 1)
+        roteiroTextField.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
         let searchIcon = UIImageView.init(frame: CGRect.init(x: 10, y: 10, width: 20, height: 20))
                 searchIcon.image = UIImage.init(systemName: "magnifyingglass")
                 searchIcon.tintColor = .black
@@ -167,6 +203,13 @@ class ColocarDestinosView: UIView {
         proximoButton.clipsToBounds = true
         proximoButton.tintColor =  UIColor(red: 0.14, green: 0.69, blue: 0.55, alpha: 1.00)
         
+        
+//        title1LabelContainer.backgroundColor = .red
+//        title2LabelContainer.backgroundColor = .blue
+//        roteiroTextFieldContainer.backgroundColor = .green
+//        adicionarButtonContainer.backgroundColor = .magenta
+//        proximoButtonContainer.backgroundColor = .systemPink
+        
     }
 }
 // MARK: - Preview
@@ -178,7 +221,7 @@ struct ColocarDestinosView_Preview: PreviewProvider {
     static var previews: some View {
         // view controller using programmatic UI
         Group {
-            ColocarDestinosView().showPreview().previewDevice("iPhone 13")
+            ColocarDestinosView().showPreview().previewDevice("iPhone 11").previewInterfaceOrientation(.portrait)
 //            ViewController().showPreview().previewDevice("iPhone SE (3rd generation)").previewInterfaceOrientation(.landscapeLeft)
         }
     }

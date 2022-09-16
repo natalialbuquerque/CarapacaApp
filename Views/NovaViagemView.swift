@@ -19,6 +19,7 @@ class NovaViagemView: UIView {
     
     let stackView = UIStackView()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -33,9 +34,6 @@ class NovaViagemView: UIView {
     
     func setupViewHierarchy(){
         // MARK: - Setup na hierarquia das subviews
-        self.addSubview(title1Label)
-        self.addSubview(roteiroTextField)
-        self.addSubview(proximoButton)
         self.addSubview(stackView)
         
         stackView.addArrangedSubview(title1LabelContainer)
@@ -49,37 +47,59 @@ class NovaViagemView: UIView {
     
     func setUpAttributes(){
         // MARK: - Configuração dos atributos dos componentes
+        class FontKit {
+
+         static func roundedFont(ofSize fontSize: CGFloat, weight: UIFont.Weight) -> UIFont {
+            let systemFont = UIFont.systemFont(ofSize: fontSize, weight: weight)
+            let font: UIFont
+
+            if #available(iOS 13.0, *) {
+                if let descriptor = systemFont.fontDescriptor.withDesign(.rounded) {
+                    font = UIFont(descriptor: descriptor, size: fontSize)
+                } else {
+                    font = systemFont
+                }
+            } else {
+                font = systemFont
+            }
+
+            return font
+         }
+        }
         title1Label.textAlignment = .left
         title1Label.text = "Primeiro, dê um nome para sua aventura"
         title1Label.textColor = .black
-        title1Label.font = UIFont.systemFont(ofSize: 28)
+        title1Label.font = FontKit.roundedFont(ofSize: 28, weight: .medium)
         title1Label.lineBreakMode = .byWordWrapping
         title1Label.numberOfLines = 2
         
+        
         stackView.axis = .vertical
         stackView.alignment = .fill
-        stackView.distribution = .fillProportionally
-        stackView.spacing = 22
+        stackView.distribution = .fill
+        stackView.spacing = 0
         
-        roteiroTextField.placeholder = "Ex.: Mochilão pela Ásia 2023"
-        roteiroTextField.font = UIFont.systemFont(ofSize: 17)
+        roteiroTextField.placeholder = "   Ex.: Mochilão pela Ásia 2023"
+        roteiroTextField.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
         roteiroTextField.backgroundColor = UIColor.white
 //        roteiroTextField.borderStyle = .roundedRect
         roteiroTextField.layer.cornerRadius = 12
         roteiroTextField.frame = CGRect(x: 0, y: 0, width: 343, height: 44)
-//        roteiroTextField.backgroundColor = UIColor.secondarySystemBackground
-        roteiroTextField.backgroundColor = UIColor.init(red: 213.0/255.0, green: 207.0/255.0, blue: 207.0/255.0, alpha: 1)
+        roteiroTextField.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
         
         let icon = UIImage(systemName: "arrow.right")
         proximoButton.setImage(icon, for: .normal)
         proximoButton.imageView?.contentMode = .scaleAspectFit
         proximoButton.setTitle("  Próximo  ", for: .normal)
         proximoButton.setTitleColor(.white, for: .normal)
-        proximoButton.tintColor = UIColor(red: 0.10, green: 0.42, blue: 0.33, alpha: 1.00)
+        proximoButton.tintColor = UIColor(red: 0.14, green: 0.69, blue: 0.55, alpha: 1.00)
         proximoButton.layer.cornerCurve = .continuous
-        proximoButton.layer.cornerRadius = 44 / 2
-//        proximoButton.layer.cornerRadius = 20
+        proximoButton.layer.cornerRadius = 22
         proximoButton.clipsToBounds = true
+        
+//        title1LabelContainer.backgroundColor = .magenta
+//        roteiroTextFieldContainer.backgroundColor = .systemPink
+//        proximoButtonContainer.backgroundColor = .blue
         
         
    
@@ -89,7 +109,7 @@ class NovaViagemView: UIView {
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.topAnchor),
+            stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
@@ -97,24 +117,27 @@ class NovaViagemView: UIView {
         
         title1Label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            title1Label.leadingAnchor.constraint(equalTo: title1LabelContainer.leadingAnchor),
+            title1Label.leadingAnchor.constraint(equalTo: title1LabelContainer.leadingAnchor, constant: 16),
             title1Label.trailingAnchor.constraint(equalTo: title1LabelContainer.trailingAnchor),
-            title1Label.topAnchor.constraint(equalTo: self.topAnchor, constant: 90),
-            title1Label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            title1Label.bottomAnchor.constraint(equalTo: title1LabelContainer.bottomAnchor),
+            title1Label.topAnchor.constraint(equalTo: title1LabelContainer.topAnchor, constant: 50)
         ])
         
         roteiroTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            roteiroTextField.topAnchor.constraint(equalTo: title1Label.bottomAnchor, constant: 16),
             roteiroTextField.leadingAnchor.constraint(equalTo: roteiroTextFieldContainer.leadingAnchor, constant: 16),
-            roteiroTextField.trailingAnchor.constraint(equalTo: roteiroTextFieldContainer.trailingAnchor, constant: -16)
+            roteiroTextField.trailingAnchor.constraint(equalTo: roteiroTextFieldContainer.trailingAnchor, constant: -16),
+            roteiroTextField.topAnchor.constraint(equalTo: roteiroTextFieldContainer.topAnchor, constant: 16),
+            roteiroTextField.bottomAnchor.constraint(equalTo: roteiroTextFieldContainer.bottomAnchor),
+            roteiroTextField.heightAnchor.constraint(equalToConstant: 44)
         ])
         
         proximoButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             proximoButton.trailingAnchor.constraint(equalTo: proximoButtonContainer.trailingAnchor, constant: -16),
-            proximoButton.topAnchor.constraint(equalTo: roteiroTextField.bottomAnchor, constant: 34),
-            proximoButton.heightAnchor.constraint(equalToConstant: 44)
+            proximoButton.heightAnchor.constraint(equalToConstant: 44),
+            proximoButton.topAnchor.constraint(equalTo: proximoButtonContainer.topAnchor, constant: 34),
+            
         ])
     }
 
@@ -129,7 +152,7 @@ struct NovaViagemView_Preview: PreviewProvider {
     static var previews: some View {
         // view controller using programmatic UI
         Group {
-            NovaViagemView().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.portrait)
+            NovaViagemView().showPreview().previewDevice("iPhone 11").previewInterfaceOrientation(.portrait)
 //            ViewController().showPreview().previewDevice("iPhone SE (3rd generation)").previewInterfaceOrientation(.landscapeLeft)
         }
     }

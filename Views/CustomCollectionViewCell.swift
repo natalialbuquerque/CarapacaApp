@@ -18,13 +18,33 @@ class CustomCollectionViewCell: UICollectionViewCell {
         return imageView
     } ()
      
+    class FontKit {
+
+     static func roundedFont(ofSize fontSize: CGFloat, weight: UIFont.Weight) -> UIFont {
+        let systemFont = UIFont.systemFont(ofSize: fontSize, weight: weight)
+        let font: UIFont
+
+        if #available(iOS 13.0, *) {
+            if let descriptor = systemFont.fontDescriptor.withDesign(.rounded) {
+                font = UIFont(descriptor: descriptor, size: fontSize)
+            } else {
+                font = systemFont
+            }
+        } else {
+            font = systemFont
+        }
+
+        return font
+     }
+    }
     private let myLabel: UILabel = {
         let label = UILabel()
         label.text = "Custom"
         label.textAlignment = .left
         label.clipsToBounds = true
         label.numberOfLines = 1
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+//        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.font = FontKit.roundedFont(ofSize: 17, weight: .semibold)
         return label
     } ()
     
@@ -59,14 +79,12 @@ class CustomCollectionViewCell: UICollectionViewCell {
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
-//        stackView.backgroundColor = .blue
-//
-//        myLabel.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            myLabel.leadingAnchor.constraint(equalTo: labelContainer.leadingAnchor),
-//            myLabel.trailingAnchor.constraint(equalTo: labelContainer.trailingAnchor),
-//
-//        ])
+
+        myLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            myLabel.topAnchor.constraint(equalTo: myImageView.bottomAnchor, constant: 8)
+
+        ])
     }
     
     required init?(coder: NSCoder) {

@@ -22,6 +22,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         homeView.meusRoteirosCollectionView.dataSource = self
         homeView.meusRoteirosCollectionView.delegate = self
+        
+        setupAdditionalConfiguration()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

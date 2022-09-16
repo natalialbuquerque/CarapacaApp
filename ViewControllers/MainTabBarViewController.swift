@@ -21,7 +21,7 @@ class MainTabBarViewController: UITabBarController {
 //        vc2.tabBarItem.image = UIImage(systemName: "globe.americas.fill")
         vc3.tabBarItem.image = UIImage(systemName: "heart.fill")
         
-        tabBar.tintColor = .systemGreen
+        tabBar.tintColor = UIColor(red: 0.01, green: 0.23, blue: 0.17, alpha: 1.00)
         
         vc1.title = "Roteiro"
 //        vc2.title = "Explorar"

@@ -11,6 +11,7 @@ class LugaresInfoView: UIView {
     // MARK: - Inicializar os componentes/ as views
     let bgImageView = UIImageView(image: UIImage(named:"pet"))
     let title1Label = UILabel()
+    let coracao = UIImageView(image: UIImage(named:"heart"))
     let grayView = UIView()
     let ofereceLabel = UILabel()
     let circleView = UIView()
@@ -27,6 +28,7 @@ class LugaresInfoView: UIView {
     
     let bgImageContainer = UIView()
     let title1Container = UIView()
+    let coracaoContainer = UIView()
     let grayViewContainer = UIView()
     let ofereceLabelContainer = UIView()
     let circleViewContainer = UIView()
@@ -41,6 +43,7 @@ class LugaresInfoView: UIView {
     
     
     let stackView = UIStackView()
+    let stackView2 = UIStackView()
     
 //    weak var delegate: HomeViewDelegate?
 
@@ -74,6 +77,7 @@ class LugaresInfoView: UIView {
             
             bgImageContainer.addSubview(bgImageView)
             title1Container.addSubview(title1Label)
+            coracaoContainer.addSubview(coracao)
             grayViewContainer.addSubview(grayView)
             ofereceLabelContainer.addSubview(ofereceLabel)
             circleViewContainer.addSubview(circleView)
@@ -87,7 +91,10 @@ class LugaresInfoView: UIView {
             adicionarAoRoteiroButtonContainer.addSubview(adicionarAoRoteiroButton)
             
             
-            bgImageContainer.addSubview(title1Container)
+            bgImageContainer.addSubview(stackView2)
+            stackView2.addSubview(title1Container)
+            stackView2.addSubview(coracaoContainer)
+            
             grayViewContainer.addSubview(ofereceLabelContainer)
             grayViewContainer.addSubview(circleViewContainer)
             circleViewContainer.addSubview(circleImageContainer)
@@ -113,11 +120,27 @@ class LugaresInfoView: UIView {
                 stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
             ])
             
+            stackView2.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+    
+            ])
+            
             title1Label.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 title1Label.leadingAnchor.constraint(equalTo: title1Container.leadingAnchor, constant: 16),
-                title1Label.bottomAnchor.constraint(equalTo: bgImageView.bottomAnchor, constant: -20)
+                title1Label.bottomAnchor.constraint(equalTo: bgImageView.bottomAnchor, constant: -20),
+    
             ])
+            
+            coracao.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+//                coracao.leadingAnchor.constraint(equalTo: coracaoContainer.leadingAnchor),
+                coracao.trailingAnchor.constraint(equalTo: coracaoContainer.trailingAnchor, constant: -16),
+//                coracao.bottomAnchor.constraint(equalTo: bgImageView.bottomAnchor, constant: -20)
+                
+            ])
+            coracaoContainer.backgroundColor = .orange
+            
             
             grayView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
@@ -213,12 +236,35 @@ class LugaresInfoView: UIView {
         
         func setUpAttributes(){
             // MARK: - Configuração dos atributos dos componentes
+            class FontKit {
+
+             static func roundedFont(ofSize fontSize: CGFloat, weight: UIFont.Weight) -> UIFont {
+                let systemFont = UIFont.systemFont(ofSize: fontSize, weight: weight)
+                let font: UIFont
+
+                if #available(iOS 13.0, *) {
+                    if let descriptor = systemFont.fontDescriptor.withDesign(.rounded) {
+                        font = UIFont(descriptor: descriptor, size: fontSize)
+                    } else {
+                        font = systemFont
+                    }
+                } else {
+                    font = systemFont
+                }
+
+                return font
+             }
+            }
             bgImageView.contentMode = .scaleAspectFill
+            bgImageView.layer.cornerRadius = 16
+            bgImageView.clipsToBounds = true
+            bgImageView.layer.cornerCurve = .continuous
+            
             
             title1Label.textAlignment = .left
             title1Label.text = "Pet Lovers"
-            title1Label.textColor = .white
-            title1Label.font = UIFont.boldSystemFont(ofSize: 28)
+            title1Label.textColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1.00)
+            title1Label.font = FontKit.roundedFont(ofSize: 28, weight: .medium)
             
             grayView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
             grayView.layer.cornerRadius = 16
@@ -227,7 +273,7 @@ class LugaresInfoView: UIView {
             ofereceLabel.text = "Estabelecimento que \noferece trabalho"
             ofereceLabel.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
             ofereceLabel.numberOfLines = 2
-            ofereceLabel.font = UIFont.boldSystemFont(ofSize: 15)
+            ofereceLabel.font = FontKit.roundedFont(ofSize: 15, weight: .semibold)
             
             circleView.layer.cornerRadius = 20
             circleView.clipsToBounds = true
@@ -241,40 +287,41 @@ class LugaresInfoView: UIView {
             
             enderecoLabel.textAlignment = .left
             enderecoLabel.text = "Endereço"
-            enderecoLabel.font = UIFont.boldSystemFont(ofSize: 17)
+            enderecoLabel.font = FontKit.roundedFont(ofSize: 17, weight: .semibold)
             enderecoLabel.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
             
             enderecoDetalhesLabel.textAlignment = .left
             enderecoDetalhesLabel.text = "Av. Min. Marcos Freire, 1815 - Bairro Novo"
-            enderecoDetalhesLabel.font = UIFont.boldSystemFont(ofSize: 15)
+            enderecoDetalhesLabel.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
             enderecoDetalhesLabel.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
             
             telefoneLabel.textAlignment = .left
             telefoneLabel.text = "Telefone"
-            telefoneLabel.font = UIFont.boldSystemFont(ofSize: 17)
+            telefoneLabel.font = FontKit.roundedFont(ofSize: 17, weight: .semibold)
             telefoneLabel.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
             
             telefoneDetalhesLabel.textAlignment = .left
             telefoneDetalhesLabel.text = "81 00000-0000"
-            telefoneDetalhesLabel.font = UIFont.boldSystemFont(ofSize: 15)
+            telefoneDetalhesLabel.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
             telefoneDetalhesLabel.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
             
             fotosLabel.textAlignment = .left
             fotosLabel.text = "Fotos"
-            fotosLabel.font = UIFont.boldSystemFont(ofSize: 17)
+            fotosLabel.font = FontKit.roundedFont(ofSize: 17, weight: .semibold)
             fotosLabel.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
             
             adicionarAoRoteiroButton.setTitle("Adicionar ao roteiro", for: .normal)
             adicionarAoRoteiroButton.setTitleColor(.white, for: .normal)
             adicionarAoRoteiroButton.tintColor =  UIColor(red: 0.14, green: 0.69, blue: 0.55, alpha: 1.00)
             adicionarAoRoteiroButton.layer.cornerCurve = .continuous
-            adicionarAoRoteiroButton.layer.cornerRadius = 30
+            adicionarAoRoteiroButton.layer.cornerRadius = 48 / 2
             adicionarAoRoteiroButton.clipsToBounds = true
+            
 //
 //            stackView.backgroundColor = .systemRed
 //            grayViewContainer.backgroundColor = .orange
-            circleViewContainer.backgroundColor = .black
-            ofereceLabelContainer.backgroundColor = .purple
+//            circleViewContainer.backgroundColor = .black
+//            ofereceLabelContainer.backgroundColor = .purple
 //            enderecoLabelContainer.backgroundColor = .systemPink
 //            enderecoDetalhesLabelContainer.backgroundColor = .gray
 //            telefoneLabelContainer.backgroundColor = .red
@@ -293,6 +340,11 @@ class LugaresInfoView: UIView {
             stackView.alignment = .fill
             stackView.distribution = .fill
             stackView.spacing = 0
+            
+            stackView2.axis = .horizontal
+            stackView2.alignment = .fill
+            stackView2.distribution = .fill
+            stackView2.spacing = 0
         }
 }
 // MARK: - Preview
