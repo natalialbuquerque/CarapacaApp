@@ -120,13 +120,13 @@
 				EC58E05928D1F992000989B0 /* HomeView.swift */,
 				EC58E06028D1FA31000989B0 /* CustomCollectionViewCell.swift */,
 				EC58E06C28D24953000989B0 /* NovaViagemView.swift */,
+				EC2810F728D4B14A00FB1272 /* SuaCidadeView.swift */,
 				EC58E07628D24AD3000989B0 /* ColocarDestinosView.swift */,
 				EC58E06E28D2496F000989B0 /* LugaresInfoView.swift */,
 				2EF7B46728D20816009E7A5B /* FavoritosTableViewCell.swift */,
 				EC58E07828D3AA08000989B0 /* Onboarding1View.swift */,
 				EC58E07C28D4A295000989B0 /* Onboarding2View.swift */,
 				EC58E08028D4A3FB000989B0 /* Onboarding3View.swift */,
-				EC2810F728D4B14A00FB1272 /* SuaCidadeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +145,7 @@
 				EC58E06428D1FEB1000989B0 /* MainTabBarViewController.swift */,
 				EC58E03528CD0EB8000989B0 /* HomeViewController.swift */,
 				EC58E06A28D24942000989B0 /* NovaViagemViewController.swift */,
+				EC2810F928D4B16100FB1272 /* SuaCidadeViewController.swift */,
 				EC58E07228D249AE000989B0 /* ColocarDestinosViewController.swift */,
 				EC58E07028D24977000989B0 /* LugaresInfoViewController.swift */,
 				EC58E07428D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift */,
@@ -152,7 +153,6 @@
 				EC58E07A28D3AA1A000989B0 /* OnboardingView1Controller.swift */,
 				EC58E07E28D4A2B1000989B0 /* Onboarding2ViewController.swift */,
 				EC58E08228D4A40E000989B0 /* Onboarding3ViewController.swift */,
-				EC2810F928D4B16100FB1272 /* SuaCidadeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

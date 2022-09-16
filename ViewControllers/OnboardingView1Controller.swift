@@ -11,6 +11,7 @@ class OnboardingView1Controller: UIViewController {
     let onboarding1View = Onboarding1View()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view = onboarding1View
 
     }
     

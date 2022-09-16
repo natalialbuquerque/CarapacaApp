@@ -11,8 +11,8 @@ class Onboarding3ViewController: UIViewController {
     let onboarding3View = Onboarding3View()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view = onboarding3View
 
-        // Do any additional setup after loading the view.
     }
     
 
