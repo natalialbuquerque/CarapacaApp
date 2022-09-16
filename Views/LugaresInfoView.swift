@@ -318,8 +318,8 @@ class LugaresInfoView: UIView {
             adicionarAoRoteiroButton.clipsToBounds = true
             
 //
-//            stackView.backgroundColor = .systemRed
-//            grayViewContainer.backgroundColor = .orange
+            stackView.backgroundColor = .systemRed
+            grayViewContainer.backgroundColor = .orange
 //            circleViewContainer.backgroundColor = .black
 //            ofereceLabelContainer.backgroundColor = .purple
 //            enderecoLabelContainer.backgroundColor = .systemPink
