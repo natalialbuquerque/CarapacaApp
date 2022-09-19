@@ -202,6 +202,7 @@ class Onboarding1View: UIView {
         
         aviao.image = UIImage(systemName: "airplane")
         
+        
         let icon = UIImage(systemName: "arrow.right")
         proximoButton.setImage(icon, for: .normal)
         proximoButton.imageView?.contentMode = .scaleAspectFit

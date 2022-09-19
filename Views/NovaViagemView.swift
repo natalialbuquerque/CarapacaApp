@@ -68,7 +68,7 @@ class NovaViagemView: UIView {
         }
         title1Label.textAlignment = .left
         title1Label.text = "Primeiro, dê um nome para sua aventura"
-        title1Label.textColor = .black
+        title1Label.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
         title1Label.font = FontKit.roundedFont(ofSize: 28, weight: .medium)
         title1Label.lineBreakMode = .byWordWrapping
         title1Label.numberOfLines = 2

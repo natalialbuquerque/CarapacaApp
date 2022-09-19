@@ -186,14 +186,15 @@ class ColocarDestinosView: UIView {
         
         title1Label.textAlignment = .left
         title1Label.text = "Quais cidades \nvocê quer curtir?"
-        title1Label.textColor = .black
+        title1Label.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
+
         title1Label.font = FontKit.roundedFont(ofSize: 28, weight: .medium)
         title1Label.lineBreakMode = .byWordWrapping
         title1Label.numberOfLines = 2
         
         title2Label.textAlignment = .left
         title2Label.text = "Primeiro destino"
-        title2Label.textColor = .gray
+        title2Label.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
         title2Label.font = FontKit.roundedFont(ofSize: 12, weight: .regular)
         
         grayView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
@@ -201,13 +202,13 @@ class ColocarDestinosView: UIView {
         
         cidadeLabel.textAlignment = .left
         cidadeLabel.text = "Salvador"
-        cidadeLabel.textColor = .gray
+        cidadeLabel.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
         cidadeLabel.font = FontKit.roundedFont(ofSize: 12, weight: .regular)
 
 
         title3Label.textAlignment = .left
         title3Label.text = "Segundo destino"
-        title3Label.textColor = .gray
+        title3Label.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
         title3Label.font = FontKit.roundedFont(ofSize: 12, weight: .regular)
         
         stackView.axis = .vertical

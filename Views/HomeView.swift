@@ -79,7 +79,7 @@ class HomeView: UIView {
 
             stackView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+                stackView.topAnchor.constraint(equalTo: self.topAnchor),
                 stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
                 stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
                 stackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)

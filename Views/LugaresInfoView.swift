@@ -11,7 +11,7 @@ class LugaresInfoView: UIView {
     // MARK: - Inicializar os componentes/ as views
     let bgImageView = UIImageView(image: UIImage(named:"pet"))
     let title1Label = UILabel()
-    let coracao = UIImageView(image: UIImage(named:"heart"))
+    let coracaoButton = UIButton(configuration: .filled())
     let grayView = UIView()
     let ofereceLabel = UILabel()
     let circleView = UIView()
@@ -28,7 +28,7 @@ class LugaresInfoView: UIView {
     
     let bgImageContainer = UIView()
     let title1Container = UIView()
-    let coracaoContainer = UIView()
+    let coracaoButtonContainer = UIView()
     let grayViewContainer = UIView()
     let ofereceLabelContainer = UIView()
     let circleViewContainer = UIView()
@@ -77,7 +77,7 @@ class LugaresInfoView: UIView {
             
             bgImageContainer.addSubview(bgImageView)
             title1Container.addSubview(title1Label)
-            coracaoContainer.addSubview(coracao)
+            coracaoButtonContainer.addSubview(coracaoButton)
             grayViewContainer.addSubview(grayView)
             ofereceLabelContainer.addSubview(ofereceLabel)
             circleViewContainer.addSubview(circleView)
@@ -90,10 +90,10 @@ class LugaresInfoView: UIView {
             fotosTableViewContainer.addSubview(fotosTableView)
             adicionarAoRoteiroButtonContainer.addSubview(adicionarAoRoteiroButton)
             
-            
             bgImageContainer.addSubview(stackView2)
+            
             stackView2.addSubview(title1Container)
-            stackView2.addSubview(coracaoContainer)
+            stackView2.addSubview(coracaoButtonContainer)
             
             grayViewContainer.addSubview(ofereceLabelContainer)
             grayViewContainer.addSubview(circleViewContainer)
@@ -132,14 +132,16 @@ class LugaresInfoView: UIView {
     
             ])
             
-            coracao.translatesAutoresizingMaskIntoConstraints = false
+            coracaoButton.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
+                coracaoButton.heightAnchor.constraint(equalToConstant: 48),
+                coracaoButton.widthAnchor.constraint(equalToConstant: 48),
 //                coracao.leadingAnchor.constraint(equalTo: coracaoContainer.leadingAnchor),
-                coracao.trailingAnchor.constraint(equalTo: coracaoContainer.trailingAnchor, constant: -16),
+//                coracaoButton.trailingAnchor.constraint(equalTo: coracaoButtonContainer.trailingAnchor, constant: -16),
 //                coracao.bottomAnchor.constraint(equalTo: bgImageView.bottomAnchor, constant: -20)
                 
             ])
-            coracaoContainer.backgroundColor = .orange
+            coracaoButtonContainer.backgroundColor = .orange
             
             
             grayView.translatesAutoresizingMaskIntoConstraints = false
@@ -317,9 +319,13 @@ class LugaresInfoView: UIView {
             adicionarAoRoteiroButton.layer.cornerRadius = 48 / 2
             adicionarAoRoteiroButton.clipsToBounds = true
             
+            coracaoButton.clipsToBounds =
+//            coracaoButton.layer.cornerRadius = 48 / 2
+//            coracaoButton.tintColor = .green
+            
 //
-            stackView.backgroundColor = .systemRed
-            grayViewContainer.backgroundColor = .orange
+//            stackView.backgroundColor == .systemRed
+//            grayViewContainer.backgroundColor = .orange
 //            circleViewContainer.backgroundColor = .black
 //            ofereceLabelContainer.backgroundColor = .purple
 //            enderecoLabelContainer.backgroundColor = .systemPink
@@ -329,11 +335,6 @@ class LugaresInfoView: UIView {
 //            fotosLabelContainer.backgroundColor = .orange
 //            fotosTableViewContainer.backgroundColor = .green
 //            adicionarAoRoteiroButtonContainer.backgroundColor = .purple
-            
-//            meusRoteirosLabel.textAlignment = .left
-//            meusRoteirosLabel.text = "Meus Roteiros"
-//            meusRoteirosLabel.textColor = .black
-//            meusRoteirosLabel.font = UIFont.boldSystemFont(ofSize: 22)
             
             
             stackView.axis = .vertical
