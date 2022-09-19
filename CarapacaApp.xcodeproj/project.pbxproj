@@ -11,6 +11,9 @@
 		2EF7B46828D20816009E7A5B /* FavoritosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7B46728D20816009E7A5B /* FavoritosTableViewCell.swift */; };
 		EC2810F828D4B14A00FB1272 /* SuaCidadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2810F728D4B14A00FB1272 /* SuaCidadeView.swift */; };
 		EC2810FA28D4B16100FB1272 /* SuaCidadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2810F928D4B16100FB1272 /* SuaCidadeViewController.swift */; };
+		2EF7B46E28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7B46D28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift */; };
+		2EF7B47028D4BB5B009E7A5B /* VerMaisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7B46F28D4BB5B009E7A5B /* VerMaisViewController.swift */; };
+		2EF7B47228D4C8B3009E7A5B /* VerMaisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7B47128D4C8B3009E7A5B /* VerMaisTableViewCell.swift */; };
 		EC58E03228CD0EB8000989B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E03128CD0EB8000989B0 /* AppDelegate.swift */; };
 		EC58E03428CD0EB8000989B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E03328CD0EB8000989B0 /* SceneDelegate.swift */; };
 		EC58E03628CD0EB8000989B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E03528CD0EB8000989B0 /* HomeViewController.swift */; };
@@ -42,6 +45,9 @@
 		2EF7B46728D20816009E7A5B /* FavoritosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewCell.swift; sourceTree = "<group>"; };
 		EC2810F728D4B14A00FB1272 /* SuaCidadeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuaCidadeView.swift; sourceTree = "<group>"; };
 		EC2810F928D4B16100FB1272 /* SuaCidadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuaCidadeViewController.swift; sourceTree = "<group>"; };
+		2EF7B46D28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeiroRoteiroViewController.swift; sourceTree = "<group>"; };
+		2EF7B46F28D4BB5B009E7A5B /* VerMaisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerMaisViewController.swift; sourceTree = "<group>"; };
+		2EF7B47128D4C8B3009E7A5B /* VerMaisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerMaisTableViewCell.swift; sourceTree = "<group>"; };
 		EC58E02E28CD0EB8000989B0 /* CarapacaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarapacaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC58E03128CD0EB8000989B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC58E03328CD0EB8000989B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +159,12 @@
 				EC58E07A28D3AA1A000989B0 /* OnboardingView1Controller.swift */,
 				EC58E07E28D4A2B1000989B0 /* Onboarding2ViewController.swift */,
 				EC58E08228D4A40E000989B0 /* Onboarding3ViewController.swift */,
+				EC58E06028D1FA31000989B0 /* CustomCollectionViewCell.swift */,
+				2EF7B47128D4C8B3009E7A5B /* VerMaisTableViewCell.swift */,
+				2EF7B46F28D4BB5B009E7A5B /* VerMaisViewController.swift */,
+				2EF7B46728D20816009E7A5B /* FavoritosTableViewCell.swift */,
+				2EF7B46528D2080C009E7A5B /* FavoritosViewController.swift */,
+				2EF7B46D28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -240,6 +252,8 @@
 				EC58E07D28D4A295000989B0 /* Onboarding2View.swift in Sources */,
 				EC58E05A28D1F992000989B0 /* HomeView.swift in Sources */,
 				EC58E07B28D3AA1A000989B0 /* OnboardingView1Controller.swift in Sources */,
+				2EF7B47028D4BB5B009E7A5B /* VerMaisViewController.swift in Sources */,
+				2EF7B46E28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift in Sources */,
 				2EF7B46628D2080C009E7A5B /* FavoritosViewController.swift in Sources */,
 				EC58E06F28D2496F000989B0 /* LugaresInfoView.swift in Sources */,
 				EC58E06528D1FEB1000989B0 /* MainTabBarViewController.swift in Sources */,
@@ -253,6 +267,7 @@
 				EC58E07528D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift in Sources */,
 				EC58E07128D24977000989B0 /* LugaresInfoViewController.swift in Sources */,
 				EC58E03428CD0EB8000989B0 /* SceneDelegate.swift in Sources */,
+				2EF7B47228D4C8B3009E7A5B /* VerMaisTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
