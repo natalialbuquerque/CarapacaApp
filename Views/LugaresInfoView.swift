@@ -319,7 +319,7 @@ class LugaresInfoView: UIView {
             adicionarAoRoteiroButton.layer.cornerRadius = 48 / 2
             adicionarAoRoteiroButton.clipsToBounds = true
             
-            coracaoButton.clipsToBounds =
+            coracaoButton.clipsToBounds = true
 //            coracaoButton.layer.cornerRadius = 48 / 2
 //            coracaoButton.tintColor = .green
             
