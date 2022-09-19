@@ -69,6 +69,7 @@ class FavoritosViewController: UIViewController {
             labelTitulo.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 16),
             labelTitulo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
             labelTitulo.bottomAnchor.constraint(equalTo: favoritosTableView.topAnchor, constant: 8)
+            
         ])
         
         
@@ -87,6 +88,7 @@ class FavoritosViewController: UIViewController {
             let header = view as! UITableViewHeaderFooterView
             header.textLabel?.textColor = UIColor.systemGray
             header.contentView.backgroundColor = UIColor.white
+          
         }
         
         func numberOfSections(in tableView: UITableView) -> Int {
