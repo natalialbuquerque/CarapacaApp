@@ -60,7 +60,7 @@ class VerMaisViewController: UIViewController {
         verMaisTableView.rightAnchor.constraint(equalTo:view.rightAnchor, constant: -16).isActive = true
         verMaisTableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
         
-        verMaisTableView.topAnchor.constraint(equalTo:localizacaoButton.bottomAnchor, constant: 16).isActive = true; verMaisTableView.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor).isActive = true; verMaisTableView.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor).isActive = true;   verMaisTableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        verMaisTableView.topAnchor.constraint(equalTo:localizacaoButton.bottomAnchor, constant: 16).isActive = true; verMaisTableView.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor).isActive = true; verMaisTableView.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor).isActive = true;   verMaisTableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
 
         
         localizacaoButton.translatesAutoresizingMaskIntoConstraints = false
