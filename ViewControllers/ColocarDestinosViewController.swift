@@ -9,10 +9,24 @@ import UIKit
 
 class ColocarDestinosViewController: UIViewController {
     let colocarDestinosView = ColocarDestinosView()
+    weak var delegate: HomeViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = colocarDestinosView
+        setupAdditionalConfiguration()
+    }
+    
+    func setupAdditionalConfiguration(){
+         // MARK: - Outras configurações
+        colocarDestinosView.proximoButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+    }
+
+    @objc func tappedButton(sender: UIButton){
+        delegate?.criarRoteiro()
+        
+        let lugaresInfor = LugaresInfoViewController()
+        navigationController?.pushViewController(lugaresInfor, animated: true)
     }
 }
 // MARK: - Preview

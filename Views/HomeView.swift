@@ -198,11 +198,6 @@ class HomeView: UIView {
             meusRoteirosCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
 //            meusRoteirosCollectionView.frame = self.bounds
             
-//            stackView.backgroundColor = .gray
-//            bgHomeContainer.backgroundColor = .orange
-//            criarRoteiroButtonContainer.backgroundColor = .systemPink
-//            meusRoteirosContainer.backgroundColor = .purple
-//            meusRoteirosCollectionViewContainer.backgroundColor = .red
         }
 
     
