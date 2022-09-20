@@ -11,17 +11,41 @@ class NovaViagemViewController: UIViewController {
     static let identifier = "NovaViagemIdentifier"
     
     let novaViagemView = NovaViagemView()
+    weak var delegate: HomeViewDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+        setupAdditionalConfiguration()
         self.view = novaViagemView
 //        novaViagemView.delegate = self
-
+    }
+    
+    var listaNovaAventura: [String] = []
+    
+    func leituraNovaAventura() -> String{
+        let novaAventura: String = novaViagemView.roteiroTextField.text ?? ""
+        return novaAventura
+    }
+    
+    func setupAdditionalConfiguration(){
+         // MARK: - Outras configurações
+        novaViagemView.proximoButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+        
     }
 
+    @objc func tappedButton(sender: UIButton){
+        delegate?.criarRoteiro()
+        
+        let suaCidade = SuaCidadeViewController()
+        navigationController?.pushViewController(suaCidade, animated: true)
+        let nomeNovaAventura: String = leituraNovaAventura()
+        
+        
+        listaNovaAventura.append(nomeNovaAventura)
+    }
 
+    
 }
 // MARK: - Preview
 #if DEBUG

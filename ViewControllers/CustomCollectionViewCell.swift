@@ -2,13 +2,14 @@
 //  CustomCollectionViewCell.swift
 //  CarapacaApp
 //
-//  Created by Natália Pessoa de Azevedo Albuquerque on 14/09/22.
+//  Created by Natália Pessoa de Azevedo Albuquerque on 19/09/22.
 //
 
 import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
     static let identifier = "CustomCollectionViewCell"
+    let novaViagem = NovaViagemView()
     
     private let myImageView: UIImageView = {
         let imageView = UIImageView()
@@ -20,7 +21,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
      
     private let myLabel: UILabel = {
         let label = UILabel()
-        label.text = "Custom"
+        label.text = "."
         label.textAlignment = .left
         label.clipsToBounds = true
         label.font = UIFont.boldSystemFont(ofSize: 15)
@@ -107,3 +108,4 @@ struct CustomCollectionViewCell_Preview: PreviewProvider {
     }
 }
 #endif
+

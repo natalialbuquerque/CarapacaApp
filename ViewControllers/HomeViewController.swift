@@ -11,8 +11,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     let homeView = HomeView()
     weak var delegate: HomeViewDelegate?
-
     
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -41,6 +42,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
          // MARK: - Outras configurações
         homeView.criarRoteiroButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
     }
+    
 
     @objc func tappedButton(sender: UIButton){
         print("Apertou o botao")
