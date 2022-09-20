@@ -20,13 +20,17 @@ class FavoritosViewController: UIViewController {
         return table
         }()
     
+    var nomes = ["Bar da Maria", "Restaurante do João", "Pousada Sol e Mar", "Pet Lovers", "Pousada 4 cantos", "Acampamento Criatura", "Casa do Axé", "Centro de Eventos do Cariri", "Pousada Mar Aberto", "Restaurante Casa Lisboa"]
+    
+    var cidades = ["Salvador", "São Luís", "Olinda", "Recife", "Olinda", "Crato", "Olinda", "Crato", "Salvador", "Salvador"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.white
         
-        view.addSubview(favoritosTableView)
         view.addSubview(labelTitulo)
+        view.addSubview(favoritosTableView)
         
         configureAttributes()
         setTableViewDelegate()
@@ -34,7 +38,7 @@ class FavoritosViewController: UIViewController {
         
         //title = "Favoritos"
         //self.navigationItem.title = "Favoritos"
-        self.navigationController?.navigationBar.backgroundColor = .white
+        //self.navigationController?.navigationBar.backgroundColor = .white
         
     }
     
@@ -54,21 +58,21 @@ class FavoritosViewController: UIViewController {
         favoritosTableView.dataSource = self
     }
     
-    //funcao para criar as constraints 
+    //funcao para criar as constraints
     func setupConstraints() {
         favoritosTableView.translatesAutoresizingMaskIntoConstraints = false
-        favoritosTableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 44).isActive = true
+        favoritosTableView.topAnchor.constraint(equalTo:labelTitulo.bottomAnchor, constant: 12).isActive = true
         favoritosTableView.leftAnchor.constraint(equalTo:view.leftAnchor, constant: 16).isActive = true
         favoritosTableView.rightAnchor.constraint(equalTo:view.rightAnchor, constant: -16).isActive = true
         favoritosTableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
         
-        favoritosTableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 44).isActive = true; favoritosTableView.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor).isActive = true; favoritosTableView.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor).isActive = true;   favoritosTableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        favoritosTableView.topAnchor.constraint(equalTo:labelTitulo.bottomAnchor, constant: 12).isActive = true; favoritosTableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true; favoritosTableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true;   favoritosTableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
 
         labelTitulo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelTitulo.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 16),
-            labelTitulo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
-            labelTitulo.bottomAnchor.constraint(equalTo: favoritosTableView.topAnchor, constant: 8)
+            labelTitulo.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 17),
+            labelTitulo.topAnchor.constraint(equalTo: view.topAnchor, constant: 88),
+            labelTitulo.bottomAnchor.constraint(equalTo: favoritosTableView.topAnchor, constant: -4)
             
         ])
         
@@ -79,16 +83,19 @@ class FavoritosViewController: UIViewController {
 
     //extensao criada para configurar a tableview
     extension FavoritosViewController: UITableViewDelegate, UITableViewDataSource {
-        
-        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            return "Mais Recentes"
+    
+        func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let header = UIView(frame: CGRect(x: 0, y: 4, width: view.frame.size.width, height: 24))
+            header.backgroundColor = UIColor(white: 1, alpha: 0.95)
+            let label = UILabel(frame: CGRect(x: 2, y: 0, width: header.frame.size.width, height: header.frame.size.height))
+            header.addSubview(label)
+            label.text = "Mais Recentes"
+            label.textColor = .systemGray
+            return header
         }
         
-        func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
-            let header = view as! UITableViewHeaderFooterView
-            header.textLabel?.textColor = UIColor.systemGray
-            header.contentView.backgroundColor = UIColor.white
-          
+        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return 24
         }
         
         func numberOfSections(in tableView: UITableView) -> Int {
@@ -96,12 +103,16 @@ class FavoritosViewController: UIViewController {
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 10
+            return nomes.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: FavoritosTableViewCell.identifier, for: indexPath)
-            //cell.textLabel?.text = "hello world"
+            let cell = tableView.dequeueReusableCell(withIdentifier: FavoritosTableViewCell.identifier, for: indexPath) as! FavoritosTableViewCell
+            let nome = nomes[indexPath.row]
+            let cidade = cidades[indexPath.row]
+            cell.lugarLabel.text = nome
+            cell.cidadeLabel.text = cidade
+            cell.lugarImageView.image = UIImage(named: nome)
             return cell
         }
         
@@ -130,3 +141,4 @@ class FavoritosViewController: UIViewController {
         }
     }
     #endif
+

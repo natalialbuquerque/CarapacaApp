@@ -11,14 +11,14 @@ class FavoritosTableViewCell: UITableViewCell {
     
     static let identifier = "FavoritosTableViewCell"
     
-    private let lugarImageView: UIImageView = {
+    let lugarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "praia")
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    private let lugarLabel: UILabel = {
+    let lugarLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = .systemFont(ofSize: 17, weight: .bold)
@@ -26,12 +26,12 @@ class FavoritosTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let bairroLabel: UILabel = {
-        let bairro = UILabel()
-        bairro.textColor = .systemGray
-        bairro.font = .systemFont(ofSize: 14, weight: .regular)
-        bairro.text = "bairro"
-        return bairro
+    let cidadeLabel: UILabel = {
+        let cidade = UILabel()
+        cidade.textColor = .systemGray
+        cidade.font = .systemFont(ofSize: 14, weight: .regular)
+        cidade.text = "cidade"
+        return cidade
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -44,7 +44,7 @@ class FavoritosTableViewCell: UITableViewCell {
         contentView.layer.cornerRadius = 16
         contentView.addSubview(lugarImageView)
         contentView.addSubview(lugarLabel)
-        contentView.addSubview(bairroLabel)
+        contentView.addSubview(cidadeLabel)
     }
 
     
@@ -55,7 +55,7 @@ class FavoritosTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
+        self.contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 4, left: 2, bottom: 4, right: 2))
         
         let imageSize = contentView.frame.size.height-16
         
@@ -69,7 +69,7 @@ class FavoritosTableViewCell: UITableViewCell {
                                   width: contentView.frame.size.width - 10,
                                   height: contentView.frame.size.height)
         
-        bairroLabel.frame = CGRect(x: 80,
+        cidadeLabel.frame = CGRect(x: 80,
                                   y: 12,
                                   width: contentView.frame.size.width - 10,
                                   height: contentView.frame.size.height)
