@@ -9,12 +9,14 @@ import UIKit
 
 class ColocarDestinosViewController: UIViewController {
     let colocarDestinosView = ColocarDestinosView()
+    let suaCidadeVieController = SuaCidadeViewController()
     weak var delegate: HomeViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = colocarDestinosView
         setupAdditionalConfiguration()
+        colocarDestinosView.cidadeLabel.text = suaCidadeVieController.leituraSuaCidadeTextField()
     }
     
     func setupAdditionalConfiguration(){
@@ -25,8 +27,8 @@ class ColocarDestinosViewController: UIViewController {
     @objc func tappedButton(sender: UIButton){
         delegate?.criarRoteiro()
         
-        let lugaresInfor = LugaresInfoViewController()
-        navigationController?.pushViewController(lugaresInfor, animated: true)
+        let primeiroRoteiro = PrimeiroRoteiroViewController()
+        navigationController?.pushViewController(primeiroRoteiro, animated: true)
     }
 }
 // MARK: - Preview

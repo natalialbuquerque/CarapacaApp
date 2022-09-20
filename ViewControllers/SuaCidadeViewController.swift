@@ -18,6 +18,11 @@ class SuaCidadeViewController: UIViewController {
         
     }
     
+    func leituraSuaCidadeTextField() -> String{
+        let suaCidadeTextField: String = suaCidade.roteiroTextField.text ?? ""
+        return suaCidadeTextField
+    }
+    
     func setupAdditionalConfiguration(){
          // MARK: - Outras configurações
         suaCidade.proximoButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
@@ -28,5 +33,6 @@ class SuaCidadeViewController: UIViewController {
         
         let colocarDestinos = ColocarDestinosViewController()
         navigationController?.pushViewController(colocarDestinos, animated: true)
+//        let suaCidade = leituraSuaCidadeTextField()
     }
 }

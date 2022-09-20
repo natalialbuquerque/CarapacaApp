@@ -52,7 +52,7 @@ class ColocarDestinosView: UIView {
         stackView.addArrangedSubview(title2LabelContainer)
         stackView.addArrangedSubview(grayViewContainer)
         
-        grayViewContainer.addSubview(cidadeLabel)
+        grayView.addSubview(cidadeLabelContainer)
         
         stackView.addArrangedSubview(title3LabelContainer)
         stackView.addArrangedSubview(stackView2)
@@ -116,12 +116,12 @@ class ColocarDestinosView: UIView {
             grayView.bottomAnchor.constraint(equalTo: grayViewContainer.bottomAnchor)
         ])
         
-//        cidadeLabel.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            cidadeLabel.topAnchor.constraint(equalTo: cidadeLabelContainer.topAnchor),
-//            cidadeLabel.leadingAnchor.constraint(equalTo: cidadeLabelContainer.leadingAnchor, constant: 32),
-//            cidadeLabel.centerYAnchor.constraint(equalTo: grayViewContainer.centerYAnchor)
-//        ])
+        cidadeLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            cidadeLabel.topAnchor.constraint(equalTo: grayView.topAnchor),
+            cidadeLabel.leadingAnchor.constraint(equalTo: grayView.leadingAnchor, constant: 16),
+            cidadeLabel.centerYAnchor.constraint(equalTo: grayViewContainer.centerYAnchor)
+        ])
         
         title3Label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -224,7 +224,7 @@ class ColocarDestinosView: UIView {
         
         
         
-        roteiroTextField.placeholder = "Escolha uma cidade ou estado  "
+        roteiroTextField.placeholder = "Escolha uma cidade  "
         roteiroTextField.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
         roteiroTextField.backgroundColor = UIColor.white
         roteiroTextField.layer.cornerRadius = 12

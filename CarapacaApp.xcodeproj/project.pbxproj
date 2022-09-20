@@ -13,6 +13,8 @@
 		2EF7B47028D4BB5B009E7A5B /* VerMaisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7B46F28D4BB5B009E7A5B /* VerMaisViewController.swift */; };
 		2EF7B47228D4C8B3009E7A5B /* VerMaisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7B47128D4C8B3009E7A5B /* VerMaisTableViewCell.swift */; };
 		EC14BAF928D8D80900723735 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC14BAF828D8D80900723735 /* CustomCollectionViewCell.swift */; };
+		EC14BAFB28D8DCA300723735 /* PrimeiroRoteiroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC14BAFA28D8DCA300723735 /* PrimeiroRoteiroView.swift */; };
+		EC14BAFE28D904DE00723735 /* Roteiros.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC14BAFD28D904DE00723735 /* Roteiros.swift */; };
 		EC2810F828D4B14A00FB1272 /* SuaCidadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2810F728D4B14A00FB1272 /* SuaCidadeView.swift */; };
 		EC2810FA28D4B16100FB1272 /* SuaCidadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2810F928D4B16100FB1272 /* SuaCidadeViewController.swift */; };
 		EC58E03228CD0EB8000989B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E03128CD0EB8000989B0 /* AppDelegate.swift */; };
@@ -59,6 +61,8 @@
 		2EF7B46F28D4BB5B009E7A5B /* VerMaisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerMaisViewController.swift; sourceTree = "<group>"; };
 		2EF7B47128D4C8B3009E7A5B /* VerMaisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerMaisTableViewCell.swift; sourceTree = "<group>"; };
 		EC14BAF828D8D80900723735 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC14BAFA28D8DCA300723735 /* PrimeiroRoteiroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeiroRoteiroView.swift; sourceTree = "<group>"; };
+		EC14BAFD28D904DE00723735 /* Roteiros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roteiros.swift; sourceTree = "<group>"; };
 		EC2810F728D4B14A00FB1272 /* SuaCidadeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuaCidadeView.swift; sourceTree = "<group>"; };
 		EC2810F928D4B16100FB1272 /* SuaCidadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuaCidadeViewController.swift; sourceTree = "<group>"; };
 		EC58E02E28CD0EB8000989B0 /* CarapacaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarapacaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,10 +115,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC14BAFC28D9044100723735 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC14BAFD28D904DE00723735 /* Roteiros.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EC58E02528CD0EB8000989B0 = {
 			isa = PBXGroup;
 			children = (
 				EC58E06228D1FA3B000989B0 /* Delegate */,
+				EC14BAFC28D9044100723735 /* Model */,
 				EC58E05B28D1F999000989B0 /* Views */,
 				EC58E06328D1FA48000989B0 /* ViewControllers */,
 				EC58E03028CD0EB8000989B0 /* CarapacaApp */,
@@ -151,6 +164,7 @@
 				EC58E06C28D24953000989B0 /* NovaViagemView.swift */,
 				EC2810F728D4B14A00FB1272 /* SuaCidadeView.swift */,
 				EC58E07628D24AD3000989B0 /* ColocarDestinosView.swift */,
+				EC14BAFA28D8DCA300723735 /* PrimeiroRoteiroView.swift */,
 				EC58E06E28D2496F000989B0 /* LugaresInfoView.swift */,
 				EC58E07828D3AA08000989B0 /* Onboarding1View.swift */,
 				EC58E07C28D4A295000989B0 /* Onboarding2View.swift */,
@@ -183,6 +197,7 @@
 				EC58E06A28D24942000989B0 /* NovaViagemViewController.swift */,
 				EC2810F928D4B16100FB1272 /* SuaCidadeViewController.swift */,
 				EC58E07228D249AE000989B0 /* ColocarDestinosViewController.swift */,
+				2EF7B46D28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift */,
 				EC58E07028D24977000989B0 /* LugaresInfoViewController.swift */,
 				EC58E07428D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift */,
 				EC58E07A28D3AA1A000989B0 /* OnboardingView1Controller.swift */,
@@ -193,7 +208,6 @@
 				2EF7B46F28D4BB5B009E7A5B /* VerMaisViewController.swift */,
 				2EF7B46728D20816009E7A5B /* FavoritosTableViewCell.swift */,
 				2EF7B46528D2080C009E7A5B /* FavoritosViewController.swift */,
-				2EF7B46D28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift */,
 				FCBD253228D8A17500E27500 /* ExplorarViewController.swift */,
 				FCBD253428D8A17D00E27500 /* ExplorarCollectionView.swift */,
 				FCBD253628D8A18900E27500 /* ExplorarLocalViewController.swift */,
@@ -272,9 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC14BAFB28D8DCA300723735 /* PrimeiroRoteiroView.swift in Sources */,
 				EC58E06928D1FEBD000989B0 /* UIViewController+Preview.swift in Sources */,
 				EC58E07328D249AE000989B0 /* ColocarDestinosViewController.swift in Sources */,
 				EC2810FA28D4B16100FB1272 /* SuaCidadeViewController.swift in Sources */,
+				EC14BAFE28D904DE00723735 /* Roteiros.swift in Sources */,
 				EC58E07F28D4A2B1000989B0 /* Onboarding2ViewController.swift in Sources */,
 				FCBD252528D8A12D00E27500 /* ExploreView.swift in Sources */,
 				EC14BAF928D8D80900723735 /* CustomCollectionViewCell.swift in Sources */,

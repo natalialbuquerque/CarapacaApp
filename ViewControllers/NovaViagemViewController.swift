@@ -21,9 +21,17 @@ class NovaViagemViewController: UIViewController {
 //        novaViagemView.delegate = self
     }
     
+    var listaNovaAventura: [String] = []
+    
+    func leituraNovaAventura() -> String{
+        let novaAventura: String = novaViagemView.roteiroTextField.text ?? ""
+        return novaAventura
+    }
+    
     func setupAdditionalConfiguration(){
          // MARK: - Outras configurações
         novaViagemView.proximoButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+        
     }
 
     @objc func tappedButton(sender: UIButton){
@@ -31,6 +39,10 @@ class NovaViagemViewController: UIViewController {
         
         let suaCidade = SuaCidadeViewController()
         navigationController?.pushViewController(suaCidade, animated: true)
+        let nomeNovaAventura: String = leituraNovaAventura()
+        
+        
+        listaNovaAventura.append(nomeNovaAventura)
     }
 
     
