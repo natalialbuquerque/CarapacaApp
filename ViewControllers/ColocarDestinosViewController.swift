@@ -8,16 +8,42 @@
 import UIKit
 
 class ColocarDestinosViewController: UIViewController {
+    
     let colocarDestinosView = ColocarDestinosView()
     let suaCidadeVieController = SuaCidadeViewController()
+    
     weak var delegate: HomeViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = colocarDestinosView
         setupAdditionalConfiguration()
-        colocarDestinosView.cidadeLabel.text = suaCidadeVieController.leituraSuaCidadeTextField()
+        setupAdicionar1()
+        setupAdicionar2()
     }
+    
+    func setupAdicionar2(){
+         // MARK: - Outras configurações
+        colocarDestinosView.adicionarButton2.addTarget(self, action: #selector(tappedButtonAdicionar2), for: .touchUpInside)
+    }
+    
+    @objc func tappedButtonAdicionar2(sender: UIButton){
+        colocarDestinosView.adicionarButton2.isHidden = true
+    }
+    
+    func setupAdicionar1(){
+         // MARK: - Outras configurações
+        colocarDestinosView.adicionarButton1.addTarget(self, action: #selector(tappedButtonAdicionar), for: .touchUpInside)
+    }
+    
+    @objc func tappedButtonAdicionar(sender: UIButton){
+        colocarDestinosView.adicionarButton1.isHidden = true
+        colocarDestinosView.title4Label.isHidden = false
+        colocarDestinosView.adicionarButton2.isHidden = false
+        colocarDestinosView.roteiroTextField3.isHidden = false
+    }
+    
+    
     
     func setupAdditionalConfiguration(){
          // MARK: - Outras configurações
