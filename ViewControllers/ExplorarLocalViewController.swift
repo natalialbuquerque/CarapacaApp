@@ -306,7 +306,7 @@ extension ExplorarLocalViewController: UICollectionViewDelegate, UICollectionVie
     fileprivate func makePessoasCell(_ indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = pessoasCollectionView.dequeueReusableCell(withReuseIdentifier: "pessoasCell", for: indexPath) as? PessoasCollectionViewCell
-        cell?.configure(imagem: UIImage(named: "Rectangle 361") ?? UIImage(), lugar: "Lugar")
+//        cell?.configure(imagem: UIImage(named: "Rectangle 361") ?? UIImage(), lugar: "Lugar")
         return cell ?? UICollectionViewCell()
         
     }
@@ -314,7 +314,7 @@ extension ExplorarLocalViewController: UICollectionViewDelegate, UICollectionVie
     fileprivate func makeRendaCell(_ indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = rendaCollectionView.dequeueReusableCell(withReuseIdentifier: "rendaCell", for: indexPath) as? RendaCollectionViewCell
-        cell?.configure(imagem: UIImage(named: "Rectangle 361") ?? UIImage(), lugar: "Renda")
+//        cell?.configure(imagem: UIImage(named: "Rectangle 361") ?? UIImage(), lugar: "Renda")
         return cell ?? UICollectionViewCell()
         
     }
@@ -322,7 +322,7 @@ extension ExplorarLocalViewController: UICollectionViewDelegate, UICollectionVie
     fileprivate func makeDescansarCell(_ indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = descansarCollectionView.dequeueReusableCell(withReuseIdentifier: "descansarCell", for: indexPath) as? DescansarCollectionViewCell
-        cell?.configure(imagem: UIImage(named: "Rectangle 361") ?? UIImage(), lugar: "Descansar")
+//        cell?.configure(imagem: UIImage(named: "Rectangle 361") ?? UIImage(), lugar: "Descansar")
         return cell ?? UICollectionViewCell()
 
     }

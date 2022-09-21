@@ -40,6 +40,7 @@
 		EC58E07F28D4A2B1000989B0 /* Onboarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07E28D4A2B1000989B0 /* Onboarding2ViewController.swift */; };
 		EC58E08128D4A3FB000989B0 /* Onboarding3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E08028D4A3FB000989B0 /* Onboarding3View.swift */; };
 		EC58E08328D4A40E000989B0 /* Onboarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E08228D4A40E000989B0 /* Onboarding3ViewController.swift */; };
+		FC9037EC28DB4A2200C903D6 /* RecifeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9037EB28DB4A2200C903D6 /* RecifeModels.swift */; };
 		FCBD252528D8A12D00E27500 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBD252428D8A12D00E27500 /* ExploreView.swift */; };
 		FCBD252728D8A13500E27500 /* ExploreLocalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBD252628D8A13500E27500 /* ExploreLocalView.swift */; };
 		FCBD252928D8A13C00E27500 /* ExploreLocalBotaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBD252828D8A13C00E27500 /* ExploreLocalBotaoView.swift */; };
@@ -90,6 +91,7 @@
 		EC58E07E28D4A2B1000989B0 /* Onboarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2ViewController.swift; sourceTree = "<group>"; };
 		EC58E08028D4A3FB000989B0 /* Onboarding3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3View.swift; sourceTree = "<group>"; };
 		EC58E08228D4A40E000989B0 /* Onboarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3ViewController.swift; sourceTree = "<group>"; };
+		FC9037EB28DB4A2200C903D6 /* RecifeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecifeModels.swift; sourceTree = "<group>"; };
 		FCBD252428D8A12D00E27500 /* ExploreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		FCBD252628D8A13500E27500 /* ExploreLocalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreLocalView.swift; sourceTree = "<group>"; };
 		FCBD252828D8A13C00E27500 /* ExploreLocalBotaoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreLocalBotaoView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				EC14BAFD28D904DE00723735 /* Roteiros.swift */,
+				FC9037EB28DB4A2200C903D6 /* RecifeModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				2EF7B46628D2080C009E7A5B /* FavoritosViewController.swift in Sources */,
 				FCBD253B28D8A22E00E27500 /* DelegateExplorar.swift in Sources */,
 				FCBD252928D8A13C00E27500 /* ExploreLocalBotaoView.swift in Sources */,
+				FC9037EC28DB4A2200C903D6 /* RecifeModels.swift in Sources */,
 				EC58E06F28D2496F000989B0 /* LugaresInfoView.swift in Sources */,
 				EC58E06528D1FEB1000989B0 /* MainTabBarViewController.swift in Sources */,
 				EC58E08128D4A3FB000989B0 /* Onboarding3View.swift in Sources */,

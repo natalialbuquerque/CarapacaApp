@@ -212,7 +212,7 @@ class ExplorarViewController: UIViewController {
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -16),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
@@ -220,17 +220,23 @@ class ExplorarViewController: UIViewController {
         
         pessoasCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            pessoasCollectionView.heightAnchor.constraint(equalToConstant: 136)
+            pessoasCollectionView.heightAnchor.constraint(equalToConstant: 136),
+            pessoasCollectionView.topAnchor.constraint(equalTo: stackViewTitle1.bottomAnchor, constant: 16),
+            pessoasCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         rendaCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            rendaCollectionView.heightAnchor.constraint(equalToConstant: 136)
+            rendaCollectionView.heightAnchor.constraint(equalToConstant: 136),
+            rendaCollectionView.topAnchor.constraint(equalTo: stackViewTitle2.bottomAnchor, constant: 16),
+            rendaCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         descansarCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            descansarCollectionView.heightAnchor.constraint(equalToConstant: 136)
+            descansarCollectionView.heightAnchor.constraint(equalToConstant: 136),
+            descansarCollectionView.topAnchor.constraint(equalTo: stackViewTitle3.bottomAnchor, constant: 16),
+            descansarCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         view.backgroundColor = .white
