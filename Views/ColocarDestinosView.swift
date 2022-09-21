@@ -11,24 +11,38 @@ class ColocarDestinosView: UIView {
     // MARK: - Inicializar os componentes/ as views
     let title1Label = UILabel()
     let title2Label = UILabel()
-    let grayView = UIView()
-    let cidadeLabel = UILabel()
+    let roteiroTextField1 = UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
+    
     let title3Label = UILabel()
-    let roteiroTextField = UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
-    let adicionarButton = UIButton(configuration: .filled())
+    let roteiroTextField2 = UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
+    let adicionarButton1 = UIButton(configuration: .filled())
+    
+    let title4Label = UILabel()
+    let roteiroTextField3 = UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
+    let adicionarButton2 = UIButton(configuration: .filled())
+    
     let proximoButton = UIButton(configuration: .filled())
+    
+    
+    
     
     let title1LabelContainer = UIView()
     let title2LabelContainer = UIView()
-    let grayViewContainer = UIView()
-    let cidadeLabelContainer = UIView()
+    let roteiroTextField1Container = UIView()
+    
+    
     let title3LabelContainer = UIView()
-    let roteiroTextFieldContainer = UIView()
-    let adicionarButtonContainer = UIView()
-    let proximoButtonContainer = UIView()
+    
+    let title4LabelContainer = UIView()
+    
+    let proximoButtonContainer2 = UIView()
     
     let stackView = UIStackView()
     let stackView2 = UIStackView()
+    let stackView3 = UIStackView()
+    
+    let stackView2Container = UIView()
+    let stackView3Container = UIView()
   
     
     override init(frame: CGRect) {
@@ -50,28 +64,38 @@ class ColocarDestinosView: UIView {
         
         stackView.addArrangedSubview(title1LabelContainer)
         stackView.addArrangedSubview(title2LabelContainer)
-        stackView.addArrangedSubview(grayViewContainer)
+        stackView.addArrangedSubview(roteiroTextField1Container)
         
-        grayView.addSubview(cidadeLabelContainer)
         
         stackView.addArrangedSubview(title3LabelContainer)
-        stackView.addArrangedSubview(stackView2)
-        stackView2.addArrangedSubview(roteiroTextFieldContainer)
-        stackView2.addArrangedSubview(adicionarButtonContainer)
+        stackView.addArrangedSubview(stackView2Container)
         
+        stackView2.addArrangedSubview(roteiroTextField2)
+        stackView2.addArrangedSubview(adicionarButton1)
         
-        stackView.addArrangedSubview(proximoButtonContainer)
+        stackView.addArrangedSubview(title4LabelContainer)
+        stackView.addArrangedSubview(stackView3Container)
+        stackView3.addArrangedSubview(roteiroTextField3)
+        stackView3.addArrangedSubview(adicionarButton2)
+   
+        
+    
+        stackView.addArrangedSubview(proximoButtonContainer2)
         
         
     
         title1LabelContainer.addSubview(title1Label)
         title2LabelContainer.addSubview(title2Label)
-        grayViewContainer.addSubview(grayView)
-        cidadeLabelContainer.addSubview(cidadeLabel)
+        roteiroTextField1Container.addSubview(roteiroTextField1)
         title3LabelContainer.addSubview(title3Label)
-        roteiroTextFieldContainer.addSubview(roteiroTextField)
-        adicionarButtonContainer.addSubview(adicionarButton)
-        proximoButtonContainer.addSubview(proximoButton)
+        stackView2Container.addSubview(stackView2)
+//        roteiroTextField2Container.addSubview(roteiroTextField2)
+//        adicionarButton1Container.addSubview(adicionarButton1)
+        title4LabelContainer.addSubview(title4Label)
+        stackView3Container.addSubview(stackView3)
+//        roteiroTextField3Container.addSubview(roteiroTextField3)
+//        adicionarButton2Container.addSubview(adicionarButton2)
+        proximoButtonContainer2.addSubview(proximoButton)
         
         
 
@@ -79,18 +103,18 @@ class ColocarDestinosView: UIView {
     
     func setupConstraints(){
         // MARK: - Configuração das constraints de auto layout
-        
-        
+
+
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            stackView.topAnchor.constraint(equalTo: self.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
-        
 
-        
+
+
         title1Label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             title1Label.leadingAnchor.constraint(equalTo: title1LabelContainer.leadingAnchor, constant: 16),
@@ -106,58 +130,77 @@ class ColocarDestinosView: UIView {
             title2Label.bottomAnchor.constraint(equalTo: title2LabelContainer.bottomAnchor),
             title2Label.leadingAnchor.constraint(equalTo: title2LabelContainer.leadingAnchor, constant: 24)
         ])
-        
-        grayView.translatesAutoresizingMaskIntoConstraints = false
+
+        roteiroTextField1.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            grayView.heightAnchor.constraint(equalToConstant: 44),
-            grayView.leadingAnchor.constraint(equalTo: grayViewContainer.leadingAnchor, constant: 16),
-            grayView.trailingAnchor.constraint(equalTo: grayViewContainer.trailingAnchor, constant: -16),
-            grayView.topAnchor.constraint(equalTo: grayViewContainer.topAnchor, constant: 4),
-            grayView.bottomAnchor.constraint(equalTo: grayViewContainer.bottomAnchor)
+            roteiroTextField1.heightAnchor.constraint(equalToConstant: 44),
+            roteiroTextField1.leadingAnchor.constraint(equalTo: roteiroTextField1Container.leadingAnchor, constant: 16),
+            roteiroTextField1.trailingAnchor.constraint(equalTo: roteiroTextField1Container.trailingAnchor, constant: -16),
+            roteiroTextField1.topAnchor.constraint(equalTo: roteiroTextField1Container.topAnchor, constant: 4),
+            roteiroTextField1.bottomAnchor.constraint(equalTo: roteiroTextField1Container.bottomAnchor)
         ])
-        
-        cidadeLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            cidadeLabel.topAnchor.constraint(equalTo: grayView.topAnchor),
-            cidadeLabel.leadingAnchor.constraint(equalTo: grayView.leadingAnchor, constant: 16),
-            cidadeLabel.centerYAnchor.constraint(equalTo: grayViewContainer.centerYAnchor)
-        ])
-        
+
+
         title3Label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             title3Label.topAnchor.constraint(equalTo: title3LabelContainer.topAnchor, constant: 16),
             title3Label.bottomAnchor.constraint(equalTo: title3LabelContainer.bottomAnchor),
             title3Label.leadingAnchor.constraint(equalTo: title3LabelContainer.leadingAnchor, constant: 24)
         ])
-        
-        
+
+
         stackView2.translatesAutoresizingMaskIntoConstraints = false
-               
-
-        roteiroTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            roteiroTextField.topAnchor.constraint(equalTo: roteiroTextFieldContainer.topAnchor,constant: 4),
-            roteiroTextField.leadingAnchor.constraint(equalTo: roteiroTextFieldContainer.leadingAnchor, constant: 16),
-            roteiroTextField.bottomAnchor.constraint(equalTo: roteiroTextFieldContainer.bottomAnchor),
-            roteiroTextField.heightAnchor.constraint(equalToConstant: 44),
-            roteiroTextField.trailingAnchor.constraint(equalTo: adicionarButton.leadingAnchor, constant: -4)
+            stackView2.trailingAnchor.constraint(equalTo: stackView2Container.trailingAnchor, constant: -16),
+            stackView2.leadingAnchor.constraint(equalTo: stackView2Container.leadingAnchor, constant: 16),
+            stackView2.topAnchor.constraint(equalTo: stackView2Container.topAnchor),
+            stackView2.bottomAnchor.constraint(equalTo: stackView2Container.bottomAnchor)
         ])
 
 
-        adicionarButton.translatesAutoresizingMaskIntoConstraints = false
+        roteiroTextField2.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            adicionarButton.trailingAnchor.constraint(equalTo: adicionarButtonContainer.trailingAnchor, constant: -16),
-            adicionarButton.heightAnchor.constraint(equalToConstant: 44),
-            adicionarButton.bottomAnchor.constraint(equalTo: adicionarButtonContainer.bottomAnchor),
-            adicionarButton.topAnchor.constraint(equalTo: adicionarButtonContainer.topAnchor, constant: 4)
+            roteiroTextField2.heightAnchor.constraint(equalToConstant: 44),
         ])
+
+        adicionarButton1.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            adicionarButton1.heightAnchor.constraint(equalToConstant: 44),
+            adicionarButton1.widthAnchor.constraint(equalToConstant: 96),
+        ])
+
+        stackView3.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView3.trailingAnchor.constraint(equalTo: stackView3Container.trailingAnchor, constant: -16),
+            stackView3.leadingAnchor.constraint(equalTo: stackView3Container.leadingAnchor, constant: 16),
+            stackView3.topAnchor.constraint(equalTo: stackView3Container.topAnchor),
+            stackView3.bottomAnchor.constraint(equalTo: stackView3Container.bottomAnchor)
+        ])
+
+        title4Label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            title4Label.topAnchor.constraint(equalTo: title4LabelContainer.topAnchor, constant: 16),
+            title4Label.bottomAnchor.constraint(equalTo: title4LabelContainer.bottomAnchor),
+            title4Label.leadingAnchor.constraint(equalTo: title4LabelContainer.leadingAnchor, constant: 24)
+        ])
+        roteiroTextField3.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            roteiroTextField3.heightAnchor.constraint(equalToConstant: 44),
+        ])
+        
+        adicionarButton2.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            adicionarButton2.heightAnchor.constraint(equalToConstant: 44),
+            adicionarButton2.widthAnchor.constraint(equalToConstant: 96),
+        ])
+
         
         proximoButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            proximoButton.centerXAnchor.constraint(equalTo: proximoButtonContainer.centerXAnchor),
-            proximoButton.leadingAnchor.constraint(equalTo: proximoButtonContainer.leadingAnchor, constant: 16),
-            proximoButton.trailingAnchor.constraint(equalTo: proximoButtonContainer.trailingAnchor, constant: -16),
-            proximoButton.bottomAnchor.constraint(equalTo: proximoButtonContainer.bottomAnchor, constant: -128),
+            proximoButton.centerXAnchor.constraint(equalTo: proximoButtonContainer2.centerXAnchor),
+            proximoButton.leadingAnchor.constraint(equalTo: proximoButtonContainer2.leadingAnchor, constant: 16),
+            proximoButton.trailingAnchor.constraint(equalTo: proximoButtonContainer2.trailingAnchor, constant: -16),
+            proximoButton.bottomAnchor.constraint(equalTo: proximoButtonContainer2.bottomAnchor, constant: -128),
             proximoButton.heightAnchor.constraint(equalToConstant: 44)
         ])
         
@@ -185,6 +228,10 @@ class ColocarDestinosView: UIView {
          }
         }
         
+        
+        
+        
+        
         title1Label.textAlignment = .left
         title1Label.text = "Quais cidades \nvocê quer curtir?"
         title1Label.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
@@ -198,13 +245,20 @@ class ColocarDestinosView: UIView {
         title2Label.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
         title2Label.font = FontKit.roundedFont(ofSize: 12, weight: .regular)
         
-        grayView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
-        grayView.layer.cornerRadius = 12
-        
-        cidadeLabel.textAlignment = .left
-        cidadeLabel.text = "Salvador"
-        cidadeLabel.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
-        cidadeLabel.font = FontKit.roundedFont(ofSize: 12, weight: .regular)
+        roteiroTextField1.placeholder = "    Escolha uma cidade  "
+        roteiroTextField1.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
+        roteiroTextField1.backgroundColor = UIColor.white
+        roteiroTextField1.layer.cornerRadius = 12
+        roteiroTextField1.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
+//        let searchIcon = UIImageView.init(frame: CGRect.init(x: 10, y: 10, width: 20, height: 20))
+//            searchIcon.image = UIImage.init(systemName: "magnifyingglass")
+//            searchIcon.tintColor = .black
+//        let leftView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
+//            leftView.backgroundColor = .clear
+//            leftView.addSubview(searchIcon)
+//            roteiroTextField1.leftView = leftView
+//            roteiroTextField1.leftViewMode = .always
+
 
 
         title3Label.textAlignment = .left
@@ -212,41 +266,68 @@ class ColocarDestinosView: UIView {
         title3Label.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
         title3Label.font = FontKit.roundedFont(ofSize: 12, weight: .regular)
         
+        title4Label.textAlignment = .left
+        title4Label.text = "Terceiro destino"
+        title4Label.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
+        title4Label.font = FontKit.roundedFont(ofSize: 12, weight: .regular)
+        title4Label.isHidden = true
+        
+        roteiroTextField3.placeholder = "    Escolha uma cidade  "
+        roteiroTextField3.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
+        roteiroTextField3.backgroundColor = UIColor.white
+        roteiroTextField3.layer.cornerRadius = 12
+        roteiroTextField3.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
+        roteiroTextField3.isHidden = true
+        
+        adicionarButton2.setTitle("Adicionar", for: .normal)
+        adicionarButton2.setTitleColor(.white, for: .normal)
+        adicionarButton2.tintColor = .systemBlue
+        adicionarButton2.layer.cornerCurve = .continuous
+        adicionarButton2.layer.cornerRadius = 12
+        adicionarButton2.clipsToBounds = true
+        adicionarButton2.tintColor =  UIColor(red: 0.05, green: 0.38, blue: 0.68, alpha: 1.00)
+        adicionarButton2.isHidden = true
+        
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.spacing = 0
         
         stackView2.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.spacing = 0
+        stackView2.alignment = .fill
+        stackView2.distribution = .fill
+        stackView2.spacing = 4
+        
+        stackView3.axis = .horizontal
+        stackView3.alignment = .fill
+        stackView3.distribution = .fill
+        stackView3.spacing = 4
+        
+        
+        roteiroTextField2.placeholder = "    Escolha uma cidade  "
+        roteiroTextField2.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
+        roteiroTextField2.backgroundColor = UIColor.white
+        roteiroTextField2.layer.cornerRadius = 12
+        roteiroTextField2.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
+//        let searchIcon = UIImageView.init(frame: CGRect.init(x: 10, y: 10, width: 20, height: 20))
+//            searchIcon.image = UIImage.init(systemName: "magnifyingglass")
+//            searchIcon.tintColor = .black
+//        let leftView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
+//            leftView.backgroundColor = .clear
+//            leftView.addSubview(searchIcon)
+//            roteiroTextField2.leftView = leftView
+//            roteiroTextField2.leftViewMode = .always
         
         
         
-        roteiroTextField.placeholder = "Escolha uma cidade  "
-        roteiroTextField.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
-        roteiroTextField.backgroundColor = UIColor.white
-        roteiroTextField.layer.cornerRadius = 12
-        roteiroTextField.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
-        let searchIcon = UIImageView.init(frame: CGRect.init(x: 10, y: 10, width: 20, height: 20))
-            searchIcon.image = UIImage.init(systemName: "magnifyingglass")
-            searchIcon.tintColor = .black
-        let leftView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
-            leftView.backgroundColor = .clear
-            leftView.addSubview(searchIcon)
-            roteiroTextField.leftView = leftView
-            roteiroTextField.leftViewMode = .always
-        
-        
-        
-        adicionarButton.setTitle("  Adicionar  ", for: .normal)
-        adicionarButton.setTitleColor(.white, for: .normal)
-        adicionarButton.tintColor = .systemBlue
-        adicionarButton.layer.cornerCurve = .continuous
-        adicionarButton.layer.cornerRadius = 12
-        adicionarButton.clipsToBounds = true
-        adicionarButton.tintColor =  UIColor(red: 0.05, green: 0.38, blue: 0.68, alpha: 1.00)
+        adicionarButton1.setTitle("Adicionar", for: .normal)
+        adicionarButton1.setTitleColor(.white, for: .normal)
+        adicionarButton1.tintColor = .systemBlue
+        adicionarButton1.layer.cornerCurve = .continuous
+        adicionarButton1.layer.cornerRadius = 12
+        adicionarButton1.clipsToBounds = true
+        adicionarButton1.tintColor =  UIColor(red: 0.05, green: 0.38, blue: 0.68, alpha: 1.00)
+
 
         proximoButton.setTitle("  Próximo  ", for: .normal)
         proximoButton.setTitleColor(.white, for: .normal)
@@ -257,12 +338,11 @@ class ColocarDestinosView: UIView {
         proximoButton.tintColor =  UIColor(red: 0.14, green: 0.69, blue: 0.55, alpha: 1.00)
         
         
-//        grayViewContainer.backgroundColor = .yellow
-//        title1LabelContainer.backgroundColor = .red
-//        title2LabelContainer.backgroundColor = .blue
-//        roteiroTextFieldContainer.backgroundColor = .green
-//        adicionarButtonContainer.backgroundColor = .magenta
-//        proximoButtonContainer.backgroundColor = .systemPink
+        
+        self.clipsToBounds = true
+        
+    
+
         
     }
 }
