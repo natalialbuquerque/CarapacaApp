@@ -97,9 +97,15 @@ class DescansarCollectionViewCell: UICollectionViewCell {
         label.frame = CGRect(x: 0, y: 0, width: 157, height: 19)
     }
     
-    public func configure(imagem: UIImage, lugar: String) {
-        imageView.image = imagem
-        label.text = lugar
+//    public func configure(imagem: UIImage, lugar: String) {
+//        imageView.image = imagem
+//        label.text = lugar
+//
+//    }
+    
+    func setup(with local: RecifeModels) {
+        label.text = local.texto
+        imageView.image = local.imagem
         
     }
     
