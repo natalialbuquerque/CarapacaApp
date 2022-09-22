@@ -64,14 +64,14 @@ class FavoritosViewController: UIViewController {
         favoritosTableView.topAnchor.constraint(equalTo:labelTitulo.bottomAnchor, constant: 12).isActive = true
         favoritosTableView.leftAnchor.constraint(equalTo:view.leftAnchor, constant: 16).isActive = true
         favoritosTableView.rightAnchor.constraint(equalTo:view.rightAnchor, constant: -16).isActive = true
-        favoritosTableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
+        favoritosTableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         
-        favoritosTableView.topAnchor.constraint(equalTo:labelTitulo.bottomAnchor, constant: 12).isActive = true; favoritosTableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true; favoritosTableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true;   favoritosTableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
+        favoritosTableView.topAnchor.constraint(equalTo:labelTitulo.bottomAnchor, constant: 12).isActive = true; favoritosTableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true; favoritosTableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true;   favoritosTableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
 
         labelTitulo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             labelTitulo.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 17),
-            labelTitulo.topAnchor.constraint(equalTo: view.topAnchor, constant: 88),
+            labelTitulo.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             labelTitulo.bottomAnchor.constraint(equalTo: favoritosTableView.topAnchor, constant: -4)
             
         ])
@@ -113,6 +113,9 @@ class FavoritosViewController: UIViewController {
             cell.lugarLabel.text = nome
             cell.cidadeLabel.text = cidade
             cell.lugarImageView.image = UIImage(named: nome)
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = UIColor.white
+            cell.selectedBackgroundView = bgColorView
             return cell
         }
         
