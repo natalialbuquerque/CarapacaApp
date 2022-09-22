@@ -20,6 +20,7 @@ class ColocarDestinosViewController: UIViewController {
         setupAdditionalConfiguration()
         setupAdicionar1()
         setupAdicionar2()
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     func setupAdicionar2(){

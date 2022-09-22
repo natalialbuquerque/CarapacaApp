@@ -141,6 +141,8 @@ class ExplorarJPViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarController?.tabBar.isHidden = true
+        
 //        self.navigationItem.title = "Nome do Roteiro"
 //        navigationController?.title = "Nome do Roteiro"
 //        navigationItem.backBarButtonItem?.image = .checkmark
@@ -276,8 +278,13 @@ class ExplorarJPViewController: UIViewController {
         
     }
     
+    
     @objc func tappedConcluir(sender: UIButton) {
         print("Concluiu")
+        
+        let adicionarAoRoteiro = PrimeiroRoteiroViewController()
+        navigationController?.pushViewController(adicionarAoRoteiro, animated: true)
+        
     }
     
    
@@ -309,6 +316,8 @@ extension ExplorarJPViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Clicou em uma cell")
+        let PraianoBar = LugaresInfoPraianaBarViewController()
+              self.navigationController?.pushViewController(PraianoBar, animated: true)
     }
     
     fileprivate func makePessoasCell(_ indexPath: IndexPath) -> UICollectionViewCell {

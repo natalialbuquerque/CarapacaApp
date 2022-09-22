@@ -11,7 +11,7 @@ class PrimeiroRoteiroTableViewCell: UITableViewCell {
     
     static let identifier = "PrimeiroRoteiroTableViewCell"
     
-    let botaoExplorar = UIView()
+    var botaoExplorar = UIView()
     let linha = UIView()
     let label = UILabel()
     

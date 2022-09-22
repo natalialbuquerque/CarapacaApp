@@ -32,19 +32,22 @@ class LugaresInfoDragaoViewController: UIViewController, UICollectionViewDelegat
         
         lugaresInfoDragaoView.fotosCollectionView.delegate = self
         lugaresInfoDragaoView.fotosCollectionView.dataSource = self
+        
+        setupAdditionalConfiguration()
     }
     
     
     func setupAdditionalConfiguration(){
          // MARK: - Outras configurações
         lugaresInfoDragaoView.adicionarAoRoteiroButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+        
     }
 
     @objc func tappedButton(sender: UIButton){
         delegate?.criarRoteiro()
         
-//        let construcaoDoRoteiro = ConstrucaoDoRoteiroViewController()
-//        navigationController?.pushViewController(construcaoDoRoteiro, animated: true)
+        let adicionarAoRoteiro = ExplorarFortalezaViewController()
+        navigationController?.pushViewController(adicionarAoRoteiro, animated: true)
     }
     
 
