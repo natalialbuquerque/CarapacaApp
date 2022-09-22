@@ -28,15 +28,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier , for: indexPath) as! CustomCollectionViewCell
-        cell.configure(label: "Custom \(indexPath.row)")
-        
-        return cell
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier , for: indexPath) as! CustomCollectionViewCell
+        let cell = homeView.meusRoteirosCollectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as? CustomCollectionViewCell
+//        cell.configure(label: "Custom \(indexPath.row)")
+        cell?.setup(with: homeRoteiros[indexPath.row])
+        return cell ?? UICollectionViewCell()
+//        return cell
     }
+    
+    
+    
     
     func setupAdditionalConfiguration(){
          // MARK: - Outras configurações
@@ -51,6 +56,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let novaViagem = NovaViagemViewController()
         navigationController?.pushViewController(novaViagem, animated: true)
     }
+    
     
     
 }
