@@ -83,6 +83,9 @@ extension VerMaisViewController: UITableViewDelegate, UITableViewDataSource {
     
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = verMaisTableView.dequeueReusableCell(withIdentifier: VerMaisTableViewCell.identifier, for: indexPath)
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = UIColor.white
+            cell.selectedBackgroundView = bgColorView
             
             return cell
         }

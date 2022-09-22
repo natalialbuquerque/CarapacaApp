@@ -11,22 +11,24 @@ class PrimeiroRoteiroView: UIView {
     // MARK: - Inicializar os componentes/ as views
     
     let topoView = UIView()
-    let destinosView = UIView()
-    let botaoView = UIView()
-
     let tituloDestino = UILabel()
-    let botaoConcluido = UIButton()
     
+    let destinosView = UIView()
     let tituloStack = UIStackView()
-    let nomeDestinoStack = UIStackView()
-    let explorarStack = UIStackView()
-    
     let meusDestinosLabel = UILabel()
     let iconMap = UIImageView(image: UIImage(systemName: "map.fill"))
-    let iconLuz = UIImageView(image: UIImage(named: "luz"))
-    let nomeDestinoLabel = UILabel()
-    let linhaView = UIView()
-    let botaoExplorar = UIButton()
+    
+    var destinoTableView: UITableView = {
+        let table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.separatorStyle = .none
+        table.register(PrimeiroRoteiroTableViewCell.self, forCellReuseIdentifier: PrimeiroRoteiroTableViewCell.identifier)
+        
+        return table
+        }()
+    
+    let botaoView = UIView()
+    let botaoConcluido = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,8 +50,7 @@ class PrimeiroRoteiroView: UIView {
         self.addSubview(botaoView)
         
         destinosView.addSubview(tituloStack)
-        destinosView.addSubview(nomeDestinoStack)
-        destinosView.addSubview(explorarStack)
+        destinosView.addSubview(destinoTableView)
         
         botaoView.addSubview(botaoConcluido)
         
@@ -57,12 +58,6 @@ class PrimeiroRoteiroView: UIView {
         
         tituloStack.addArrangedSubview(iconMap)
         tituloStack.addArrangedSubview(meusDestinosLabel)
-        
-        nomeDestinoStack.addArrangedSubview(iconLuz)
-        nomeDestinoStack.addArrangedSubview(nomeDestinoLabel)
-        
-        explorarStack.addArrangedSubview(linhaView)
-        explorarStack.addArrangedSubview(botaoExplorar)
     }
     
     func setupConstraints(){
@@ -87,7 +82,7 @@ class PrimeiroRoteiroView: UIView {
         destinosView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             destinosView.topAnchor.constraint(equalTo: topoView.bottomAnchor,constant: 16),
-            destinosView.bottomAnchor.constraint(equalTo: explorarStack.bottomAnchor, constant: 16),
+            destinosView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -200),
             destinosView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             destinosView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
         ])
@@ -96,7 +91,7 @@ class PrimeiroRoteiroView: UIView {
         tituloStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tituloStack.topAnchor.constraint(equalTo: destinosView.topAnchor, constant: 16),
-            tituloStack.leadingAnchor.constraint(equalTo: destinosView.leadingAnchor, constant: 16),
+            tituloStack.leadingAnchor.constraint(equalTo: destinosView.leadingAnchor, constant: 8),
             tituloStack.trailingAnchor.constraint(equalTo: destinosView.trailingAnchor, constant: -16),
             tituloStack.heightAnchor.constraint(equalToConstant: 40)
         ])
@@ -114,43 +109,12 @@ class PrimeiroRoteiroView: UIView {
         meusDestinosLabel.topAnchor.constraint(equalTo: tituloStack.topAnchor, constant: -4),
         ])
         
-        nomeDestinoStack.translatesAutoresizingMaskIntoConstraints = false
+        destinoTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        nomeDestinoStack.topAnchor.constraint(equalTo: tituloStack.bottomAnchor, constant: 8),
-        nomeDestinoStack.leadingAnchor.constraint(equalTo: destinosView.leadingAnchor, constant: 16),
-        nomeDestinoStack.trailingAnchor.constraint(equalTo: destinosView.trailingAnchor, constant: -16),
-        nomeDestinoStack.heightAnchor.constraint(equalToConstant: 32)
-        ])
-        
-        iconLuz.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-        iconLuz.leadingAnchor.constraint(equalTo: nomeDestinoStack.leadingAnchor, constant: 8),
-        iconLuz.trailingAnchor.constraint(equalTo: nomeDestinoStack.trailingAnchor, constant: -300),
-        iconLuz.centerXAnchor.constraint(equalTo: nomeDestinoStack.centerXAnchor),
-        ])
-        
-        explorarStack.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-        explorarStack.topAnchor.constraint(equalTo: nomeDestinoStack.bottomAnchor, constant: 8),
-        explorarStack.leadingAnchor.constraint(equalTo: destinosView.leadingAnchor, constant: 16),
-        explorarStack.trailingAnchor.constraint(equalTo: destinosView.trailingAnchor, constant: -16),
-        explorarStack.heightAnchor.constraint(equalToConstant: 44)
-        ])
-        
-        linhaView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-        linhaView.topAnchor.constraint(equalTo: explorarStack.topAnchor),
-        linhaView.bottomAnchor.constraint(equalTo: explorarStack.bottomAnchor),
-        linhaView.leadingAnchor.constraint(equalTo: explorarStack.leadingAnchor, constant: 16),
-        linhaView.widthAnchor.constraint(equalToConstant: 2)
-        ])
-        
-        botaoExplorar.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            botaoExplorar.centerXAnchor.constraint(equalTo: explorarStack.centerXAnchor),
-            botaoExplorar.trailingAnchor.constraint(equalTo: destinosView.trailingAnchor, constant: -16),
-            botaoExplorar.leadingAnchor.constraint(equalTo: destinosView.leadingAnchor, constant: 56),
-            botaoExplorar.heightAnchor.constraint(equalToConstant: 44)
+            destinoTableView.topAnchor.constraint(equalTo: tituloStack.bottomAnchor, constant: -8),
+            destinoTableView.leadingAnchor.constraint(equalTo: destinosView.leadingAnchor, constant: 8),
+            destinoTableView.trailingAnchor.constraint(equalTo: destinosView.trailingAnchor, constant: -8),
+            destinoTableView.bottomAnchor.constraint(equalTo: destinosView.bottomAnchor, constant: -16)
         ])
         
         botaoView.translatesAutoresizingMaskIntoConstraints = false
@@ -187,45 +151,16 @@ class PrimeiroRoteiroView: UIView {
         tituloStack.backgroundColor = .white
         tituloStack.axis = .horizontal
         tituloStack.alignment = .center
-        tituloStack.distribution = .fill
-        tituloStack.spacing = 8
+        tituloStack.distribution = .fillProportionally
+        tituloStack.spacing = 2
         
         iconMap.backgroundColor = .white
         iconMap.tintColor = .black
-        iconMap.contentMode = .scaleToFill
+        iconMap.contentMode = .scaleAspectFit
         
         meusDestinosLabel.textColor = .black
         meusDestinosLabel.text = "Meus Destinos"
         meusDestinosLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        
-        nomeDestinoStack.backgroundColor = .white
-        nomeDestinoStack.axis = .horizontal
-        nomeDestinoStack.alignment = .center
-        nomeDestinoStack.distribution = .fillProportionally
-        nomeDestinoStack.spacing = 12
-        
-        iconLuz.contentMode = .scaleAspectFill
-        
-        nomeDestinoLabel.textColor = .black
-        nomeDestinoLabel.text = "Destino 1"
-        nomeDestinoLabel.font = UIFont.boldSystemFont(ofSize: 17)
-
-        explorarStack.backgroundColor = .white
-        explorarStack.axis = .horizontal
-        explorarStack.alignment = .center
-        explorarStack.distribution = .fillProportionally
-        explorarStack.spacing = 20
-        
-        linhaView.backgroundColor = UIColor(red: 0.72, green: 0.72, blue: 0.72, alpha: 1.00)
-        linhaView.contentMode = .scaleAspectFill
-        linhaView.layer.cornerRadius = 4
-        
-        botaoExplorar.setTitle("Explorar", for: .normal)
-        botaoExplorar.setTitleColor(.black, for: .normal)
-        botaoExplorar.layer.cornerCurve = .circular
-        botaoExplorar.layer.cornerRadius = 24
-        botaoExplorar.clipsToBounds = true
-        botaoExplorar.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
         
         botaoView.backgroundColor = .white
         botaoView.clipsToBounds = true
@@ -242,6 +177,7 @@ class PrimeiroRoteiroView: UIView {
         
     }
 }
+
 // MARK: - Preview
 #if DEBUG
 import SwiftUI

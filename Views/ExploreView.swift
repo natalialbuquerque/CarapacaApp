@@ -50,7 +50,7 @@ class ExploreView: UIView {
     
     let localizacaoButton: UIButton = {
         let button = UIButton(configuration: .filled())
-        button.setTitle("Sua Localização", for: .normal)
+        button.setTitle("Recife-PE", for: .normal)
         button.setTitleColor(UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00), for: .normal)
         button.tintColor = UIColor(red: 0.01, green: 0.23, blue: 0.17, alpha: 1.00)
         button.layer.cornerCurve = .continuous

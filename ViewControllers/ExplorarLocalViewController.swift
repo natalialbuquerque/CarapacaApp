@@ -110,7 +110,7 @@ class ExplorarLocalViewController: UIViewController {
     let title5Label: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.text = "Para fazer renda extra"
+        label.text = "Para descansar"
         label.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
@@ -214,6 +214,7 @@ class ExplorarLocalViewController: UIViewController {
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            
         ])
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -227,25 +228,28 @@ class ExplorarLocalViewController: UIViewController {
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
         pessoasCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            pessoasCollectionView.heightAnchor.constraint(equalToConstant: 136)
+            pessoasCollectionView.heightAnchor.constraint(equalToConstant: 136),
+            pessoasCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         rendaCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            rendaCollectionView.heightAnchor.constraint(equalToConstant: 136)
+            rendaCollectionView.heightAnchor.constraint(equalToConstant: 136),
+            rendaCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         descansarCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            descansarCollectionView.heightAnchor.constraint(equalToConstant: 136)
+            descansarCollectionView.heightAnchor.constraint(equalToConstant: 136),
+            descansarCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         

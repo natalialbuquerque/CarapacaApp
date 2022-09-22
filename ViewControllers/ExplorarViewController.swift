@@ -110,7 +110,7 @@ class ExplorarViewController: UIViewController {
     let title5Label: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.text = "Para fazer renda extra"
+        label.text = "Para descansar"
         label.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
