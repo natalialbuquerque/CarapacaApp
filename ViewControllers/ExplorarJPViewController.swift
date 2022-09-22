@@ -290,7 +290,7 @@ class ExplorarJPViewController: UIViewController {
     @objc func tappedConcluir(sender: UIButton) {
         print("Concluiu")
         
-        let adicionarAoRoteiro = PrimeiroRoteiroViewController()
+        let adicionarAoRoteiro = PrimeiroRoteiro1ViewController()
         navigationController?.pushViewController(adicionarAoRoteiro, animated: true)
         
     }
