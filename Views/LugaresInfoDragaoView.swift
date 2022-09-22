@@ -1,17 +1,17 @@
 //
-//  LugaresInforView.swift
-//  Carapaca App rascunho
+//  LugaresInfoDragaoView.swift
+//  CarapacaApp
 //
-//  Created by Natália Pessoa de Azevedo Albuquerque on 13/09/22.
+//  Created by Natália Pessoa de Azevedo Albuquerque on 22/09/22.
 //
 
 import UIKit
 
-class LugaresInfoView: UIView {
+class LugaresInfoDragaoView: UIView {
     // MARK: - Inicializar os componentes/ as views
-    let bgImageView = UIImageView(image: UIImage(named:"pet"))
+    let bgImageView = UIImageView(image: UIImage(named:"Hostel Dragão do Mar 1"))
     let title1Label = UILabel()
-    let coracaoButton = UIButton(configuration: .filled())
+    let coracaoButton = UIButton(configuration: .borderless())
     let grayView = UIView()
     let ofereceLabel = UILabel()
     let circleView = UIView()
@@ -21,7 +21,17 @@ class LugaresInfoView: UIView {
     let telefoneLabel = UILabel()
     let telefoneDetalhesLabel = UILabel()
     let fotosLabel = UILabel()
-    let fotosTableView = UITableView()
+    
+    let fotosCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 164, height: 130)
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(DragaoCollectionViewCell.self, forCellWithReuseIdentifier: DragaoCollectionViewCell.identifier)
+        collectionView.showsHorizontalScrollIndicator = false
+        return collectionView
+    }()
+    
     let adicionarAoRoteiroButton = UIButton(configuration: .filled())
     
     
@@ -38,7 +48,7 @@ class LugaresInfoView: UIView {
     let telefoneLabelContainer = UIView()
     let telefoneDetalhesLabelContainer = UIView()
     let fotosLabelContainer = UIView()
-    let fotosTableViewContainer = UIView()
+    let fotosCollectionViewContainer = UIView()
     let adicionarAoRoteiroButtonContainer = UIView()
     
     
@@ -71,9 +81,8 @@ class LugaresInfoView: UIView {
             stackView.addArrangedSubview(telefoneLabelContainer)
             stackView.addArrangedSubview(telefoneDetalhesLabelContainer)
             stackView.addArrangedSubview(fotosLabelContainer)
-            stackView.addArrangedSubview(fotosTableViewContainer)
+            stackView.addArrangedSubview(fotosCollectionViewContainer)
             stackView.addArrangedSubview(adicionarAoRoteiroButtonContainer)
-    
     
             
             bgImageContainer.addSubview(bgImageView)
@@ -88,7 +97,7 @@ class LugaresInfoView: UIView {
             telefoneLabelContainer.addSubview(telefoneLabel)
             telefoneDetalhesLabelContainer.addSubview(telefoneDetalhesLabel)
             fotosLabelContainer.addSubview(fotosLabel)
-            fotosTableViewContainer.addSubview(fotosTableView)
+            fotosCollectionViewContainer.addSubview(fotosCollectionView)
             adicionarAoRoteiroButtonContainer.addSubview(adicionarAoRoteiroButton)
             
             bgImageContainer.addSubview(stackView2)
@@ -110,7 +119,8 @@ class LugaresInfoView: UIView {
                 bgImageView.topAnchor.constraint(equalTo: bgImageContainer.topAnchor),
                 bgImageView.leadingAnchor.constraint(equalTo: bgImageContainer.leadingAnchor),
                 bgImageView.trailingAnchor.constraint(equalTo: bgImageContainer.trailingAnchor),
-                bgImageView.bottomAnchor.constraint(equalTo: bgImageContainer.bottomAnchor)
+                bgImageView.bottomAnchor.constraint(equalTo: bgImageContainer.bottomAnchor),
+                bgImageView.heightAnchor.constraint(equalToConstant: 222)
             ])
             
             stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -137,9 +147,8 @@ class LugaresInfoView: UIView {
             NSLayoutConstraint.activate([
                 coracaoButton.heightAnchor.constraint(equalToConstant: 48),
                 coracaoButton.widthAnchor.constraint(equalToConstant: 48),
-//                coracao.leadingAnchor.constraint(equalTo: coracaoContainer.leadingAnchor),
-//                coracaoButton.trailingAnchor.constraint(equalTo: coracaoButtonContainer.trailingAnchor, constant: -16),
-//                coracao.bottomAnchor.constraint(equalTo: bgImageView.bottomAnchor, constant: -20)
+                coracaoButton.centerYAnchor.constraint(equalTo: title1Label.centerYAnchor),
+                coracaoButton.trailingAnchor.constraint(equalTo: bgImageView.trailingAnchor, constant: -16)
                 
             ])
             coracaoButtonContainer.backgroundColor = .orange
@@ -216,14 +225,15 @@ class LugaresInfoView: UIView {
                 fotosLabel.topAnchor.constraint(equalTo: fotosLabelContainer.topAnchor),
                 fotosLabel.bottomAnchor.constraint(equalTo: fotosLabelContainer.bottomAnchor, constant: -9)
             ])
-//
-//            fotosTableView.translatesAutoresizingMaskIntoConstraints = false
-//            NSLayoutConstraint.activate([
-//                fotosTableView.trailingAnchor.constraint(equalTo: fotosTableViewContainer.trailingAnchor, constant: -16),
-//                fotosTableView.leadingAnchor.constraint(equalTo: fotosTableViewContainer.leadingAnchor, constant: 16),
-//                fotosTableView.topAnchor.constraint(equalTo: fotosTableViewContainer.topAnchor),
-//                fotosTableView.bottomAnchor.constraint(equalTo: fotosTableViewContainer.bottomAnchor)
-//            ])
+            
+            fotosCollectionView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                fotosCollectionView.trailingAnchor.constraint(equalTo: fotosCollectionViewContainer.trailingAnchor, constant: -16),
+                fotosCollectionView.leadingAnchor.constraint(equalTo: fotosCollectionViewContainer.leadingAnchor, constant: 16),
+                fotosCollectionView.heightAnchor.constraint(equalToConstant: 130)
+            ])
+
+
 
             adicionarAoRoteiroButton.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
@@ -231,7 +241,7 @@ class LugaresInfoView: UIView {
                 adicionarAoRoteiroButton.leadingAnchor.constraint(equalTo: adicionarAoRoteiroButtonContainer.leadingAnchor, constant: 16),
                 adicionarAoRoteiroButton.topAnchor.constraint(equalTo: adicionarAoRoteiroButtonContainer.topAnchor, constant: 179),
                 adicionarAoRoteiroButton.bottomAnchor.constraint(equalTo: adicionarAoRoteiroButtonContainer.bottomAnchor, constant: -16),
-                adicionarAoRoteiroButton.heightAnchor.constraint(equalToConstant: 48)
+                adicionarAoRoteiroButton.heightAnchor.constraint(equalToConstant: 48),
             ])
 
         }
@@ -265,15 +275,23 @@ class LugaresInfoView: UIView {
             
             
             title1Label.textAlignment = .left
-            title1Label.text = "Pet Lovers"
+            title1Label.text = "Hostel Dragão do Mar"
             title1Label.textColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1.00)
             title1Label.font = FontKit.roundedFont(ofSize: 28, weight: .medium)
+            
+            coracaoButton.clipsToBounds = true
+            let iconFav = UIImage(systemName: "heart")
+            coracaoButton.setImage(iconFav, for: .normal)
+            coracaoButton.imageView?.contentMode = .center
+            coracaoButton.tintColor = .white
+
             
             grayView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
             grayView.layer.cornerRadius = 16
             
+            
             ofereceLabel.textAlignment = .left
-            ofereceLabel.text = "Estabelecimento que \noferece trabalho"
+            ofereceLabel.text = "Estabelecimento que oferece \nacomodação em troca de trabalho"
             ofereceLabel.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
             ofereceLabel.numberOfLines = 2
             ofereceLabel.font = FontKit.roundedFont(ofSize: 15, weight: .semibold)
@@ -284,7 +302,7 @@ class LugaresInfoView: UIView {
             circleView.layer.borderWidth = 0.0
             
             
-            circleImage.image = UIImage(systemName: "bag.fill")
+            circleImage.image = UIImage(systemName: "moon.fill")
             circleImage.contentMode = .scaleAspectFit
             circleImage.clipsToBounds = true
             
@@ -294,7 +312,8 @@ class LugaresInfoView: UIView {
             enderecoLabel.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
             
             enderecoDetalhesLabel.textAlignment = .left
-            enderecoDetalhesLabel.text = "Av. Min. Marcos Freire, 1815 - Bairro Novo"
+            enderecoDetalhesLabel.text = "R. Rufino de Alencar, 382 - Centro, Fortaleza - CE, 60060-620"
+            enderecoDetalhesLabel.numberOfLines = 2
             enderecoDetalhesLabel.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
             enderecoDetalhesLabel.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
             
@@ -304,7 +323,7 @@ class LugaresInfoView: UIView {
             telefoneLabel.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
             
             telefoneDetalhesLabel.textAlignment = .left
-            telefoneDetalhesLabel.text = "81 00000-0000"
+            telefoneDetalhesLabel.text = "(85) 3104-5693"
             telefoneDetalhesLabel.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
             telefoneDetalhesLabel.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
             
@@ -312,6 +331,7 @@ class LugaresInfoView: UIView {
             fotosLabel.text = "Fotos"
             fotosLabel.font = FontKit.roundedFont(ofSize: 17, weight: .semibold)
             fotosLabel.textColor = UIColor(red: 0.02, green: 0.13, blue: 0.22, alpha: 1.00)
+        
             
             adicionarAoRoteiroButton.setTitle("Adicionar ao roteiro", for: .normal)
             adicionarAoRoteiroButton.setTitleColor(.white, for: .normal)
@@ -320,22 +340,12 @@ class LugaresInfoView: UIView {
             adicionarAoRoteiroButton.layer.cornerRadius = 48 / 2
             adicionarAoRoteiroButton.clipsToBounds = true
             
-            coracaoButton.clipsToBounds = true
-//            coracaoButton.layer.cornerRadius = 48 / 2
-//            coracaoButton.tintColor = .green
+//            adicionarAoRoteiroButtonContainer.backgroundColor = .orange
+//            fotosLabelContainer.backgroundColor = .yellow
+//            fotosCollectionViewContainer.backgroundColor = .black
             
-//
-//            stackView.backgroundColor == .systemRed
-//            grayViewContainer.backgroundColor = .orange
-//            circleViewContainer.backgroundColor = .black
-//            ofereceLabelContainer.backgroundColor = .purple
-//            enderecoLabelContainer.backgroundColor = .systemPink
-//            enderecoDetalhesLabelContainer.backgroundColor = .gray
-//            telefoneLabelContainer.backgroundColor = .red
-//            telefoneDetalhesLabelContainer.backgroundColor = .gray
-//            fotosLabelContainer.backgroundColor = .orange
-//            fotosTableViewContainer.backgroundColor = .green
-//            adicionarAoRoteiroButtonContainer.backgroundColor = .purple
+            
+        
             
             
             stackView.axis = .vertical
@@ -354,13 +364,14 @@ class LugaresInfoView: UIView {
 import SwiftUI
 
 @available(iOS 13, *)
-struct LugaresInforView_Preview: PreviewProvider {
+struct LugaresInfoDragaoView_Preview: PreviewProvider {
     static var previews: some View {
         // view controller using programmatic UI
         Group {
-            LugaresInfoView().showPreview().previewDevice("iPhone 11").previewInterfaceOrientation(.portrait)
+            LugaresInfoDragaoView().showPreview().previewDevice("iPhone 11").previewInterfaceOrientation(.portrait)
 //            ViewController().showPreview().previewDevice("iPhone SE (3rd generation)").previewInterfaceOrientation(.landscapeLeft)
         }
     }
 }
 #endif
+
