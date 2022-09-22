@@ -19,6 +19,7 @@ class NovaViagemViewController: UIViewController {
         setupAdditionalConfiguration()
         self.view = novaViagemView
 //        novaViagemView.delegate = self
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     var listaNovaAventura: [String] = []

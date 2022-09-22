@@ -141,6 +141,8 @@ class ExplorarNatalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarController?.tabBar.isHidden = true
 
 //        self.navigationItem.title = "Nome do Roteiro"
 //        navigationController?.title = "Nome do Roteiro"
@@ -315,6 +317,8 @@ extension ExplorarNatalViewController: UICollectionViewDelegate, UICollectionVie
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Clicou em uma cell")
+        let camaraoPotiguar = LugaresInfoCamaroesPotiguarViewController()
+              self.navigationController?.pushViewController(camaraoPotiguar, animated: true)
     }
 
     fileprivate func makePessoasCell(_ indexPath: IndexPath) -> UICollectionViewCell {

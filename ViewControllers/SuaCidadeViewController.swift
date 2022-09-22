@@ -15,6 +15,7 @@ class SuaCidadeViewController: UIViewController {
         super.viewDidLoad()
         self.view = suaCidade
         setupAdditionalConfiguration()
+        self.tabBarController?.tabBar.isHidden = true
         
     }
     

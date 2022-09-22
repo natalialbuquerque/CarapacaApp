@@ -32,19 +32,22 @@ class LugaresInfoCamaroesPotiguarViewController: UIViewController, UICollectionV
         
         lugaresInfoCamaroesView.fotosCollectionView.delegate = self
         lugaresInfoCamaroesView.fotosCollectionView.dataSource = self
+        
+        setupAdditionalConfiguration()
     }
     
     
     func setupAdditionalConfiguration(){
          // MARK: - Outras configurações
         lugaresInfoCamaroesView.adicionarAoRoteiroButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+        
     }
 
     @objc func tappedButton(sender: UIButton){
         delegate?.criarRoteiro()
         
-//        let construcaoDoRoteiro = ConstrucaoDoRoteiroViewController()
-//        navigationController?.pushViewController(construcaoDoRoteiro, animated: true)
+        let adicionarAoRoteiro = ExplorarNatalViewController()
+        navigationController?.pushViewController(adicionarAoRoteiro, animated: true)
     }
     
 

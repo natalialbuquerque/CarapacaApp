@@ -31,19 +31,22 @@ class LugaresInfoPraianaBarViewController: UIViewController, UICollectionViewDel
         
         lugaresInfoView.fotosCollectionView.delegate = self
         lugaresInfoView.fotosCollectionView.dataSource = self
+        
+        setupAdditionalConfiguration()
     }
     
     
     func setupAdditionalConfiguration(){
          // MARK: - Outras configurações
         lugaresInfoView.adicionarAoRoteiroButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+        
     }
 
     @objc func tappedButton(sender: UIButton){
         delegate?.criarRoteiro()
         
-//        let construcaoDoRoteiro = ConstrucaoDoRoteiroViewController()
-//        navigationController?.pushViewController(construcaoDoRoteiro, animated: true)
+        let adicionarAoRoteiro = ExplorarJPViewController()
+        navigationController?.pushViewController(adicionarAoRoteiro, animated: true)
     }
     
 

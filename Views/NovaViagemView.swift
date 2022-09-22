@@ -88,6 +88,7 @@ class NovaViagemView: UIView {
         roteiroTextField.frame = CGRect(x: 0, y: 0, width: 343, height: 44)
         roteiroTextField.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
         
+        
         let icon = UIImage(systemName: "arrow.right")
         proximoButton.setImage(icon, for: .normal)
         proximoButton.imageView?.contentMode = .scaleAspectFit

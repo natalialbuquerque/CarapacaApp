@@ -142,6 +142,7 @@ class ExplorarFortalezaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tabBarController?.tabBar.isHidden = true
 //        self.navigationItem.title = "Nome do Roteiro"
 //        navigationController?.title = "Nome do Roteiro"
 //        navigationItem.backBarButtonItem?.image = .checkmark
@@ -316,6 +317,8 @@ extension ExplorarFortalezaViewController: UICollectionViewDelegate, UICollectio
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Clicou em uma cell")
+        let dragaoBar = LugaresInfoDragaoViewController()
+              self.navigationController?.pushViewController(dragaoBar, animated: true)
     }
 
     fileprivate func makePessoasCell(_ indexPath: IndexPath) -> UICollectionViewCell {
