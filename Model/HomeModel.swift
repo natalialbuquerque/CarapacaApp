@@ -16,6 +16,13 @@ let homeRoteiros: [HomeModel] = [
     HomeModel(texto: "Mochilão América Latina", imagem: UIImage(named: "peru") ?? UIImage()),
     HomeModel(texto: "China 2023", imagem: UIImage(named: "china") ?? UIImage()),
     HomeModel(texto: "Pelo litoral", imagem: UIImage(named: "litoral") ?? UIImage()),
-    HomeModel(texto: "Pelo litoral", imagem: UIImage(named: "Recife Bar da Praia") ?? UIImage())
+]
+
+let home2Roteiros: [HomeModel] = [
+    HomeModel(texto: "Pelo Nordeste", imagem: UIImage(named: "pelo nordeste") ?? UIImage()),
+    HomeModel(texto: "Mochilão América Latina", imagem: UIImage(named: "peru") ?? UIImage()),
+    HomeModel(texto: "China 2023", imagem: UIImage(named: "china") ?? UIImage()),
+    HomeModel(texto: "Pelo litoral", imagem: UIImage(named: "litoral") ?? UIImage()),
+    
 
 ]

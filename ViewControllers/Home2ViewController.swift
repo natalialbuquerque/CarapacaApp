@@ -9,18 +9,18 @@ import UIKit
 
 class Home2ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
-    let homeView = Home2View()
+    let home2View = Home2View()
     weak var delegate: HomeViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        self.view = homeView
-        homeView.delegate = self
+        self.view = home2View
+        home2View.delegate = self
         
-        homeView.meusRoteirosCollectionView.dataSource = self
-        homeView.meusRoteirosCollectionView.delegate = self
+        home2View.meusRoteiros2CollectionView.dataSource = self
+        home2View.meusRoteiros2CollectionView.delegate = self
         
         setupAdditionalConfiguration()
     }
@@ -30,7 +30,7 @@ class Home2ViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = homeView.meusRoteirosCollectionView.dequeueReusableCell(withReuseIdentifier: "Custom2CollectionViewCell", for: indexPath) as? Custom2CollectionViewCell
+        let cell = home2View.meusRoteiros2CollectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as? CustomCollectionViewCell
         cell?.setup(with: home2Roteiros[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
@@ -40,7 +40,7 @@ class Home2ViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func setupAdditionalConfiguration(){
          // MARK: - Outras configurações
-        homeView.criarRoteiroButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+        home2View.criarRoteiroButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
     }
     
 

@@ -14,7 +14,7 @@ class Home2View: UIView {
     let title2Label = UILabel()
     let criarRoteiroButton = UIButton(configuration: .filled())
     let meusRoteirosLabel = UILabel()
-    var meusRoteirosCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    var meusRoteiros2CollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     let layout = UICollectionViewFlowLayout()
     
     let bgHomeContainer = UIView()
@@ -58,7 +58,7 @@ class Home2View: UIView {
             title2Container.addSubview(title2Label)
             criarRoteiroButtonContainer.addSubview(criarRoteiroButton)
             meusRoteirosContainer.addSubview(meusRoteirosLabel)
-            meusRoteirosCollectionViewContainer.addSubview(meusRoteirosCollectionView)
+            meusRoteirosCollectionViewContainer.addSubview(meusRoteiros2CollectionView)
 
             
             bgHomeContainer.addSubview(title1Container)
@@ -114,13 +114,13 @@ class Home2View: UIView {
                 meusRoteirosLabel.bottomAnchor.constraint(equalTo: meusRoteirosContainer.bottomAnchor, constant: -16)
             ])
 
-            meusRoteirosCollectionView.translatesAutoresizingMaskIntoConstraints = false
+            meusRoteiros2CollectionView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                meusRoteirosCollectionView.centerYAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.centerYAnchor),
-                meusRoteirosCollectionView.centerXAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.centerXAnchor),
-                meusRoteirosCollectionView.topAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.topAnchor),
-                meusRoteirosCollectionView.leadingAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.leadingAnchor, constant:  16),
-                meusRoteirosCollectionView.trailingAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.trailingAnchor, constant: -16)
+                meusRoteiros2CollectionView.centerYAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.centerYAnchor),
+                meusRoteiros2CollectionView.centerXAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.centerXAnchor),
+                meusRoteiros2CollectionView.topAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.topAnchor),
+                meusRoteiros2CollectionView.leadingAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.leadingAnchor, constant:  16),
+                meusRoteiros2CollectionView.trailingAnchor.constraint(equalTo: meusRoteirosCollectionViewContainer.trailingAnchor, constant: -16)
             ])
         }
         
@@ -194,8 +194,8 @@ class Home2View: UIView {
             layout.minimumLineSpacing = 20
             layout.minimumInteritemSpacing = 10
             layout.itemSize = CGSize(width: 164, height: 140)
-            meusRoteirosCollectionView.collectionViewLayout = layout
-            meusRoteirosCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+            meusRoteiros2CollectionView.collectionViewLayout = layout
+            meusRoteiros2CollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
 //            meusRoteirosCollectionView.frame = self.bounds
             
         }
