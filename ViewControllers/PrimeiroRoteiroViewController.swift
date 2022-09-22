@@ -77,7 +77,7 @@ extension PrimeiroRoteiroViewController: UITableViewDelegate, UITableViewDataSou
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0 {
             
-            let explorarTela = LugaresInfoViewController()
+            let explorarTela = LugaresInfoDragaoViewController()
                   self.navigationController?.pushViewController(explorarTela, animated: true)
             
                     } else if indexPath.section == 1 {

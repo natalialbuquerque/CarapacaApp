@@ -16,6 +16,8 @@
 		EC14BAF928D8D80900723735 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC14BAF828D8D80900723735 /* CustomCollectionViewCell.swift */; };
 		EC14BAFB28D8DCA300723735 /* PrimeiroRoteiroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC14BAFA28D8DCA300723735 /* PrimeiroRoteiroView.swift */; };
 		EC14BAFE28D904DE00723735 /* Roteiros.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC14BAFD28D904DE00723735 /* Roteiros.swift */; };
+		EC14BB0028DB674500723735 /* PraianoBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC14BAFF28DB674500723735 /* PraianoBarCollectionViewCell.swift */; };
+		EC14BB0228DB68DB00723735 /* PraianoBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC14BB0128DB68DB00723735 /* PraianoBarModel.swift */; };
 		EC2810F828D4B14A00FB1272 /* SuaCidadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2810F728D4B14A00FB1272 /* SuaCidadeView.swift */; };
 		EC2810FA28D4B16100FB1272 /* SuaCidadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2810F928D4B16100FB1272 /* SuaCidadeViewController.swift */; };
 		EC58E03228CD0EB8000989B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E03128CD0EB8000989B0 /* AppDelegate.swift */; };
@@ -30,10 +32,9 @@
 		EC58E06928D1FEBD000989B0 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06828D1FEBD000989B0 /* UIViewController+Preview.swift */; };
 		EC58E06B28D24942000989B0 /* NovaViagemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06A28D24942000989B0 /* NovaViagemViewController.swift */; };
 		EC58E06D28D24953000989B0 /* NovaViagemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06C28D24953000989B0 /* NovaViagemView.swift */; };
-		EC58E06F28D2496F000989B0 /* LugaresInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06E28D2496F000989B0 /* LugaresInfoView.swift */; };
-		EC58E07128D24977000989B0 /* LugaresInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07028D24977000989B0 /* LugaresInfoViewController.swift */; };
+		EC58E06F28D2496F000989B0 /* LugaresInfoPraianaBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E06E28D2496F000989B0 /* LugaresInfoPraianaBarView.swift */; };
+		EC58E07128D24977000989B0 /* LugaresInfoPraianaBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07028D24977000989B0 /* LugaresInfoPraianaBarViewController.swift */; };
 		EC58E07328D249AE000989B0 /* ColocarDestinosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07228D249AE000989B0 /* ColocarDestinosViewController.swift */; };
-		EC58E07528D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07428D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift */; };
 		EC58E07728D24AD3000989B0 /* ColocarDestinosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07628D24AD3000989B0 /* ColocarDestinosView.swift */; };
 		EC58E07928D3AA08000989B0 /* Onboarding1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07828D3AA08000989B0 /* Onboarding1View.swift */; };
 		EC58E07B28D3AA1A000989B0 /* OnboardingView1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07A28D3AA1A000989B0 /* OnboardingView1Controller.swift */; };
@@ -41,12 +42,23 @@
 		EC58E07F28D4A2B1000989B0 /* Onboarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E07E28D4A2B1000989B0 /* Onboarding2ViewController.swift */; };
 		EC58E08128D4A3FB000989B0 /* Onboarding3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E08028D4A3FB000989B0 /* Onboarding3View.swift */; };
 		EC58E08328D4A40E000989B0 /* Onboarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E08228D4A40E000989B0 /* Onboarding3ViewController.swift */; };
+
 		FC68A30828DC7121007224CA /* ExplorarJPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68A30728DC7121007224CA /* ExplorarJPViewController.swift */; };
 		FC68A30A28DC756D007224CA /* ExploreJPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68A30928DC756D007224CA /* ExploreJPView.swift */; };
 		FC68A30C28DC7AA3007224CA /* ExploreNatalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68A30B28DC7AA3007224CA /* ExploreNatalView.swift */; };
 		FC68A30E28DC7B7B007224CA /* ExploreFortalezaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68A30D28DC7B7B007224CA /* ExploreFortalezaView.swift */; };
 		FC68A31028DC8082007224CA /* ExploreNatalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68A30F28DC8082007224CA /* ExploreNatalViewController.swift */; };
 		FC68A31228DC8B03007224CA /* ExplorarFortalezaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68A31128DC8B03007224CA /* ExplorarFortalezaViewController.swift */; };
+
+		EC86F19428DC839B00E8C5B0 /* LugaresInfoCamaroesPotiguarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86F19328DC839B00E8C5B0 /* LugaresInfoCamaroesPotiguarViewController.swift */; };
+		EC86F19628DC83DE00E8C5B0 /* LugaresInfoCamaroesPotiguarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86F19528DC83DE00E8C5B0 /* LugaresInfoCamaroesPotiguarView.swift */; };
+		EC86F19828DC841F00E8C5B0 /* CamaroesPotiguarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86F19728DC841F00E8C5B0 /* CamaroesPotiguarCollectionViewCell.swift */; };
+		EC86F19A28DC844A00E8C5B0 /* CamaroesPotiguarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86F19928DC844A00E8C5B0 /* CamaroesPotiguarModel.swift */; };
+		EC86F19E28DC8B3F00E8C5B0 /* DragaoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86F19D28DC8B3F00E8C5B0 /* DragaoModel.swift */; };
+		EC86F1A028DC8BA700E8C5B0 /* LugaresInfoDragaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86F19F28DC8BA700E8C5B0 /* LugaresInfoDragaoView.swift */; };
+		EC86F1A228DC8C3D00E8C5B0 /* DragaoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86F1A128DC8C3D00E8C5B0 /* DragaoCollectionViewCell.swift */; };
+		EC86F1A428DC8CDD00E8C5B0 /* LugaresInfoDragaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86F1A328DC8CDD00E8C5B0 /* LugaresInfoDragaoViewController.swift */; };
+
 		FC9037EC28DB4A2200C903D6 /* RecifeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9037EB28DB4A2200C903D6 /* RecifeModels.swift */; };
 		FCBD252528D8A12D00E27500 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBD252428D8A12D00E27500 /* ExploreView.swift */; };
 		FCBD252728D8A13500E27500 /* ExploreLocalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBD252628D8A13500E27500 /* ExploreLocalView.swift */; };
@@ -72,6 +84,8 @@
 		EC14BAF828D8D80900723735 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC14BAFA28D8DCA300723735 /* PrimeiroRoteiroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeiroRoteiroView.swift; sourceTree = "<group>"; };
 		EC14BAFD28D904DE00723735 /* Roteiros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roteiros.swift; sourceTree = "<group>"; };
+		EC14BAFF28DB674500723735 /* PraianoBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraianoBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC14BB0128DB68DB00723735 /* PraianoBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraianoBarModel.swift; sourceTree = "<group>"; };
 		EC2810F728D4B14A00FB1272 /* SuaCidadeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuaCidadeView.swift; sourceTree = "<group>"; };
 		EC2810F928D4B16100FB1272 /* SuaCidadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuaCidadeViewController.swift; sourceTree = "<group>"; };
 		EC58E02E28CD0EB8000989B0 /* CarapacaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarapacaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,10 +102,9 @@
 		EC58E06828D1FEBD000989B0 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		EC58E06A28D24942000989B0 /* NovaViagemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovaViagemViewController.swift; sourceTree = "<group>"; };
 		EC58E06C28D24953000989B0 /* NovaViagemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovaViagemView.swift; sourceTree = "<group>"; };
-		EC58E06E28D2496F000989B0 /* LugaresInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LugaresInfoView.swift; sourceTree = "<group>"; };
-		EC58E07028D24977000989B0 /* LugaresInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LugaresInfoViewController.swift; sourceTree = "<group>"; };
+		EC58E06E28D2496F000989B0 /* LugaresInfoPraianaBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LugaresInfoPraianaBarView.swift; sourceTree = "<group>"; };
+		EC58E07028D24977000989B0 /* LugaresInfoPraianaBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LugaresInfoPraianaBarViewController.swift; sourceTree = "<group>"; };
 		EC58E07228D249AE000989B0 /* ColocarDestinosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColocarDestinosViewController.swift; sourceTree = "<group>"; };
-		EC58E07428D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrucaoDoRoteiroViewController.swift; sourceTree = "<group>"; };
 		EC58E07628D24AD3000989B0 /* ColocarDestinosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColocarDestinosView.swift; sourceTree = "<group>"; };
 		EC58E07828D3AA08000989B0 /* Onboarding1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1View.swift; sourceTree = "<group>"; };
 		EC58E07A28D3AA1A000989B0 /* OnboardingView1Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1Controller.swift; sourceTree = "<group>"; };
@@ -99,12 +112,23 @@
 		EC58E07E28D4A2B1000989B0 /* Onboarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2ViewController.swift; sourceTree = "<group>"; };
 		EC58E08028D4A3FB000989B0 /* Onboarding3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3View.swift; sourceTree = "<group>"; };
 		EC58E08228D4A40E000989B0 /* Onboarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3ViewController.swift; sourceTree = "<group>"; };
+
 		FC68A30728DC7121007224CA /* ExplorarJPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorarJPViewController.swift; sourceTree = "<group>"; };
 		FC68A30928DC756D007224CA /* ExploreJPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreJPView.swift; sourceTree = "<group>"; };
 		FC68A30B28DC7AA3007224CA /* ExploreNatalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreNatalView.swift; sourceTree = "<group>"; };
 		FC68A30D28DC7B7B007224CA /* ExploreFortalezaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFortalezaView.swift; sourceTree = "<group>"; };
 		FC68A30F28DC8082007224CA /* ExploreNatalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreNatalViewController.swift; sourceTree = "<group>"; };
 		FC68A31128DC8B03007224CA /* ExplorarFortalezaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorarFortalezaViewController.swift; sourceTree = "<group>"; };
+
+		EC86F19328DC839B00E8C5B0 /* LugaresInfoCamaroesPotiguarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugaresInfoCamaroesPotiguarViewController.swift; sourceTree = "<group>"; };
+		EC86F19528DC83DE00E8C5B0 /* LugaresInfoCamaroesPotiguarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugaresInfoCamaroesPotiguarView.swift; sourceTree = "<group>"; };
+		EC86F19728DC841F00E8C5B0 /* CamaroesPotiguarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaroesPotiguarCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC86F19928DC844A00E8C5B0 /* CamaroesPotiguarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaroesPotiguarModel.swift; sourceTree = "<group>"; };
+		EC86F19D28DC8B3F00E8C5B0 /* DragaoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragaoModel.swift; sourceTree = "<group>"; };
+		EC86F19F28DC8BA700E8C5B0 /* LugaresInfoDragaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugaresInfoDragaoView.swift; sourceTree = "<group>"; };
+		EC86F1A128DC8C3D00E8C5B0 /* DragaoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragaoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC86F1A328DC8CDD00E8C5B0 /* LugaresInfoDragaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugaresInfoDragaoViewController.swift; sourceTree = "<group>"; };
+
 		FC9037EB28DB4A2200C903D6 /* RecifeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecifeModels.swift; sourceTree = "<group>"; };
 		FCBD252428D8A12D00E27500 /* ExploreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		FCBD252628D8A13500E27500 /* ExploreLocalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreLocalView.swift; sourceTree = "<group>"; };
@@ -136,6 +160,9 @@
 			children = (
 				EC14BAFD28D904DE00723735 /* Roteiros.swift */,
 				FC9037EB28DB4A2200C903D6 /* RecifeModels.swift */,
+				EC14BB0128DB68DB00723735 /* PraianoBarModel.swift */,
+				EC86F19928DC844A00E8C5B0 /* CamaroesPotiguarModel.swift */,
+				EC86F19D28DC8B3F00E8C5B0 /* DragaoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,7 +209,12 @@
 				EC2810F728D4B14A00FB1272 /* SuaCidadeView.swift */,
 				EC58E07628D24AD3000989B0 /* ColocarDestinosView.swift */,
 				EC14BAFA28D8DCA300723735 /* PrimeiroRoteiroView.swift */,
-				EC58E06E28D2496F000989B0 /* LugaresInfoView.swift */,
+				EC58E06E28D2496F000989B0 /* LugaresInfoPraianaBarView.swift */,
+				EC14BAFF28DB674500723735 /* PraianoBarCollectionViewCell.swift */,
+				EC86F19528DC83DE00E8C5B0 /* LugaresInfoCamaroesPotiguarView.swift */,
+				EC86F19728DC841F00E8C5B0 /* CamaroesPotiguarCollectionViewCell.swift */,
+				EC86F19F28DC8BA700E8C5B0 /* LugaresInfoDragaoView.swift */,
+				EC86F1A128DC8C3D00E8C5B0 /* DragaoCollectionViewCell.swift */,
 				EC58E07828D3AA08000989B0 /* Onboarding1View.swift */,
 				EC58E07C28D4A295000989B0 /* Onboarding2View.swift */,
 				EC58E08028D4A3FB000989B0 /* Onboarding3View.swift */,
@@ -219,8 +251,9 @@
 				EC58E07228D249AE000989B0 /* ColocarDestinosViewController.swift */,
 				2E3A543828DBFD91002A575D /* PrimeiroRoteiroTableViewCell.swift */,
 				2EF7B46D28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift */,
-				EC58E07028D24977000989B0 /* LugaresInfoViewController.swift */,
-				EC58E07428D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift */,
+				EC58E07028D24977000989B0 /* LugaresInfoPraianaBarViewController.swift */,
+				EC86F19328DC839B00E8C5B0 /* LugaresInfoCamaroesPotiguarViewController.swift */,
+				EC86F1A328DC8CDD00E8C5B0 /* LugaresInfoDragaoViewController.swift */,
 				EC58E07A28D3AA1A000989B0 /* OnboardingView1Controller.swift */,
 				EC58E07E28D4A2B1000989B0 /* Onboarding2ViewController.swift */,
 				EC58E08228D4A40E000989B0 /* Onboarding3ViewController.swift */,
@@ -310,11 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC86F1A028DC8BA700E8C5B0 /* LugaresInfoDragaoView.swift in Sources */,
+				EC86F1A428DC8CDD00E8C5B0 /* LugaresInfoDragaoViewController.swift in Sources */,
 				EC14BAFB28D8DCA300723735 /* PrimeiroRoteiroView.swift in Sources */,
 				FC68A30A28DC756D007224CA /* ExploreJPView.swift in Sources */,
 				EC58E06928D1FEBD000989B0 /* UIViewController+Preview.swift in Sources */,
 				EC58E07328D249AE000989B0 /* ColocarDestinosViewController.swift in Sources */,
 				EC2810FA28D4B16100FB1272 /* SuaCidadeViewController.swift in Sources */,
+				EC86F19628DC83DE00E8C5B0 /* LugaresInfoCamaroesPotiguarView.swift in Sources */,
 				EC14BAFE28D904DE00723735 /* Roteiros.swift in Sources */,
 				FC68A31028DC8082007224CA /* ExploreNatalViewController.swift in Sources */,
 				EC58E07F28D4A2B1000989B0 /* Onboarding2ViewController.swift in Sources */,
@@ -323,39 +359,45 @@
 				FC68A31228DC8B03007224CA /* ExplorarFortalezaViewController.swift in Sources */,
 				EC2810F828D4B14A00FB1272 /* SuaCidadeView.swift in Sources */,
 				EC58E06B28D24942000989B0 /* NovaViagemViewController.swift in Sources */,
+				EC86F19E28DC8B3F00E8C5B0 /* DragaoModel.swift in Sources */,
 				EC58E07728D24AD3000989B0 /* ColocarDestinosView.swift in Sources */,
 				EC58E03628CD0EB8000989B0 /* HomeViewController.swift in Sources */,
 				FCBD252F28D8A15900E27500 /* RendaCollectionViewCell.swift in Sources */,
 				EC58E08328D4A40E000989B0 /* Onboarding3ViewController.swift in Sources */,
 				EC58E07D28D4A295000989B0 /* Onboarding2View.swift in Sources */,
+				EC86F1A228DC8C3D00E8C5B0 /* DragaoCollectionViewCell.swift in Sources */,
 				EC58E05A28D1F992000989B0 /* HomeView.swift in Sources */,
 				FC68A30C28DC7AA3007224CA /* ExploreNatalView.swift in Sources */,
 				EC58E07B28D3AA1A000989B0 /* OnboardingView1Controller.swift in Sources */,
 				2EF7B47028D4BB5B009E7A5B /* VerMaisViewController.swift in Sources */,
+				EC14BB0228DB68DB00723735 /* PraianoBarModel.swift in Sources */,
 				2EF7B46E28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift in Sources */,
 				FCBD252D28D8A15100E27500 /* PessoasCollectionViewCell.swift in Sources */,
 				2EF7B46628D2080C009E7A5B /* FavoritosViewController.swift in Sources */,
 				FCBD253B28D8A22E00E27500 /* DelegateExplorar.swift in Sources */,
 				FCBD252928D8A13C00E27500 /* ExploreLocalBotaoView.swift in Sources */,
 				FC9037EC28DB4A2200C903D6 /* RecifeModels.swift in Sources */,
-				EC58E06F28D2496F000989B0 /* LugaresInfoView.swift in Sources */,
+				EC58E06F28D2496F000989B0 /* LugaresInfoPraianaBarView.swift in Sources */,
 				EC58E06528D1FEB1000989B0 /* MainTabBarViewController.swift in Sources */,
 				EC58E08128D4A3FB000989B0 /* Onboarding3View.swift in Sources */,
 				EC58E05F28D1F9EE000989B0 /* HomeViewDelegate.swift in Sources */,
 				FC68A30E28DC7B7B007224CA /* ExploreFortalezaView.swift in Sources */,
 				EC58E07928D3AA08000989B0 /* Onboarding1View.swift in Sources */,
 				EC58E06728D1FEBA000989B0 /* UIView+Preview.swift in Sources */,
+				EC86F19828DC841F00E8C5B0 /* CamaroesPotiguarCollectionViewCell.swift in Sources */,
+				EC86F19A28DC844A00E8C5B0 /* CamaroesPotiguarModel.swift in Sources */,
 				EC58E06D28D24953000989B0 /* NovaViagemView.swift in Sources */,
+				EC86F19428DC839B00E8C5B0 /* LugaresInfoCamaroesPotiguarViewController.swift in Sources */,
 				FCBD253528D8A17D00E27500 /* ExplorarCollectionView.swift in Sources */,
+				EC14BB0028DB674500723735 /* PraianoBarCollectionViewCell.swift in Sources */,
 				FCBD252B28D8A14800E27500 /* PopUpLocalAddView.swift in Sources */,
 				EC58E03228CD0EB8000989B0 /* AppDelegate.swift in Sources */,
 				2E3A543928DBFD91002A575D /* PrimeiroRoteiroTableViewCell.swift in Sources */,
 				2EF7B46828D20816009E7A5B /* FavoritosTableViewCell.swift in Sources */,
-				EC58E07528D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift in Sources */,
 				FCBD253328D8A17500E27500 /* ExplorarViewController.swift in Sources */,
 				FC68A30828DC7121007224CA /* ExplorarJPViewController.swift in Sources */,
 				FCBD252728D8A13500E27500 /* ExploreLocalView.swift in Sources */,
-				EC58E07128D24977000989B0 /* LugaresInfoViewController.swift in Sources */,
+				EC58E07128D24977000989B0 /* LugaresInfoPraianaBarViewController.swift in Sources */,
 				FCBD253928D8A19400E27500 /* LocalizacaoViewController.swift in Sources */,
 				FCBD253128D8A16300E27500 /* DescansarCollectionViewCell.swift in Sources */,
 				EC58E03428CD0EB8000989B0 /* SceneDelegate.swift in Sources */,
