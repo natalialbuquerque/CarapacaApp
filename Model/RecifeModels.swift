@@ -36,7 +36,7 @@ let recifeDescansar: [RecifeModels] = [
 ]
 
 let jpPessoas: [RecifeModels] = [
-    RecifeModels(texto: "Oficina de Artesanato", imagem: UIImage(named: "JP Pessoas 1") ?? UIImage()),
+    RecifeModels(texto: "Praiano Bar", imagem: UIImage(named: "Praiano Bar 3") ?? UIImage()),
     RecifeModels(texto: "Clube de leitura", imagem: UIImage(named: "JP Pessoas 2") ?? UIImage()),
     RecifeModels(texto: "Jardim Botânico", imagem: UIImage(named: "JP Pessoas 3") ?? UIImage()),
     RecifeModels(texto: "Beta Coworking", imagem: UIImage(named: "JP Pessoas 4") ?? UIImage())
@@ -67,7 +67,7 @@ let natalPessoas: [RecifeModels] = [
 
 let natalRenda: [RecifeModels] = [
     RecifeModels(texto: "Noir Café", imagem: UIImage(named: "Natal Renda 1") ?? UIImage()),
-    RecifeModels(texto: "Fábrica Imagine", imagem: UIImage(named: "Natal Renda 2") ?? UIImage()),
+    RecifeModels(texto: "Camarões Potiguar", imagem: UIImage(named: "Camarões Potiguar 4") ?? UIImage()),
     RecifeModels(texto: "Hostel RN", imagem: UIImage(named: "Natal Renda 3") ?? UIImage()),
     RecifeModels(texto: "Floricultura da Rosa", imagem: UIImage(named: "Natal Renda 4") ?? UIImage())
 ]
@@ -96,6 +96,6 @@ let fortalezaRenda: [RecifeModels] = [
 let fortalezaDescansar: [RecifeModels] = [
     RecifeModels(texto: "BeiraMar Hotel", imagem: UIImage(named: "Fortaleza Descansar 1") ?? UIImage()),
     RecifeModels(texto: "Hotel Fortal", imagem: UIImage(named: "Fortaleza Descansar 2") ?? UIImage()),
-    RecifeModels(texto: "Camping Iracema", imagem: UIImage(named: "Fortaleza Descansar 3") ?? UIImage()),
+    RecifeModels(texto: "Hostel Dragão do Mar", imagem: UIImage(named: "Hostel Dragão do Mar 1") ?? UIImage()),
     RecifeModels(texto: "Parque Camping", imagem: UIImage(named: "Fortaleza Descansar 4") ?? UIImage())
 ]

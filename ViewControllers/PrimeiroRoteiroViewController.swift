@@ -77,17 +77,17 @@ extension PrimeiroRoteiroViewController: UITableViewDelegate, UITableViewDataSou
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0 {
             
-            let explorarTela = LugaresInfoDragaoViewController()
+            let explorarTela = ExplorarJPViewController()
                   self.navigationController?.pushViewController(explorarTela, animated: true)
             
                     } else if indexPath.section == 1 {
                         
-                        let explorarTela = FavoritosViewController()
+                        let explorarTela = ExplorarNatalViewController()
                               self.navigationController?.pushViewController(explorarTela, animated: true)
                         
                     } else if indexPath.section == 2 {
                        
-                        let explorarTela = VerMaisViewController()
+                        let explorarTela = ExplorarFortalezaViewController()
                               self.navigationController?.pushViewController(explorarTela, animated: true)
                     }
     }

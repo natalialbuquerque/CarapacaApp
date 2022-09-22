@@ -213,7 +213,7 @@ class ExplorarJPViewController: UIViewController {
             scrollView.topAnchor.constraint(equalTo: exploreJPView.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            scrollView.bottomAnchor.constraint(equalTo: exploreLocalBotaoView.bottomAnchor), 
         ])
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
