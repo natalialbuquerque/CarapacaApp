@@ -1,15 +1,15 @@
 //
-//  ExplorarLocalViewController.swift
-//  Carapaca App rascunho
+//  ExplorarJPViewController.swift
+//  CarapacaApp
 //
-//  Created by mcor on 17/09/22.
+//  Created by mcor on 22/09/22.
 //
 
 import UIKit
 
-class ExplorarLocalViewController: UIViewController {
-    
-    let exploreLocalView = ExploreLocalView()
+class ExplorarJPViewController: UIViewController {
+
+    let exploreJPView = ExploreJPView()
     let scrollView =  UIScrollView()
     let contentView = UIView()
     let exploreLocalBotaoView = ExploreLocalBotaoView()
@@ -26,7 +26,7 @@ class ExplorarLocalViewController: UIViewController {
     let stackViewTitle1: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.alignment = .fill
         stackView.spacing = 0
         return stackView
@@ -64,7 +64,7 @@ class ExplorarLocalViewController: UIViewController {
     let stackViewTitle2: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.alignment = .fill
         stackView.spacing = 0
         return stackView
@@ -101,7 +101,7 @@ class ExplorarLocalViewController: UIViewController {
     let stackViewTitle3: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.alignment = .fill
         stackView.spacing = 0
         return stackView
@@ -164,7 +164,7 @@ class ExplorarLocalViewController: UIViewController {
     
     func setupHierarchy() {
         
-        view.addSubview(exploreLocalView)
+        view.addSubview(exploreJPView)
         view.addSubview(scrollView)
         view.addSubview(exploreLocalBotaoView)
         
@@ -193,11 +193,11 @@ class ExplorarLocalViewController: UIViewController {
     
     func setupConstraints() {
         
-        exploreLocalView.translatesAutoresizingMaskIntoConstraints = false
+        exploreJPView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            exploreLocalView.topAnchor.constraint(equalTo: view.topAnchor),
-            exploreLocalView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            exploreLocalView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            exploreJPView.topAnchor.constraint(equalTo: view.topAnchor),
+            exploreJPView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            exploreJPView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
         exploreLocalBotaoView.translatesAutoresizingMaskIntoConstraints = false
@@ -210,11 +210,10 @@ class ExplorarLocalViewController: UIViewController {
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: exploreLocalView.bottomAnchor),
+            scrollView.topAnchor.constraint(equalTo: exploreJPView.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-            
         ])
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -234,26 +233,31 @@ class ExplorarLocalViewController: UIViewController {
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
+        
         pessoasCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             pessoasCollectionView.heightAnchor.constraint(equalToConstant: 136),
+            pessoasCollectionView.topAnchor.constraint(equalTo: stackViewTitle1.bottomAnchor, constant: 16),
             pessoasCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         rendaCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             rendaCollectionView.heightAnchor.constraint(equalToConstant: 136),
+            rendaCollectionView.topAnchor.constraint(equalTo: stackViewTitle2.bottomAnchor, constant: 16),
             rendaCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         descansarCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             descansarCollectionView.heightAnchor.constraint(equalToConstant: 136),
+            descansarCollectionView.topAnchor.constraint(equalTo: stackViewTitle3.bottomAnchor, constant: 16),
             descansarCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         
         view.backgroundColor = .white
+
     }
     
     func setupAdditionalConfiguration() {
@@ -278,8 +282,8 @@ class ExplorarLocalViewController: UIViewController {
     
    
 }
-
-extension ExplorarLocalViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+extension ExplorarJPViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.pessoasCollectionView {
@@ -311,6 +315,7 @@ extension ExplorarLocalViewController: UICollectionViewDelegate, UICollectionVie
         
         let cell = pessoasCollectionView.dequeueReusableCell(withReuseIdentifier: "pessoasCell", for: indexPath) as? PessoasCollectionViewCell
 //        cell?.configure(imagem: UIImage(named: "Rectangle 361") ?? UIImage(), lugar: "Lugar")
+        cell?.setup(with: jpPessoas[indexPath.row])
         return cell ?? UICollectionViewCell()
         
     }
@@ -319,6 +324,7 @@ extension ExplorarLocalViewController: UICollectionViewDelegate, UICollectionVie
         
         let cell = rendaCollectionView.dequeueReusableCell(withReuseIdentifier: "rendaCell", for: indexPath) as? RendaCollectionViewCell
 //        cell?.configure(imagem: UIImage(named: "Rectangle 361") ?? UIImage(), lugar: "Renda")
+        cell?.setup(with: jpRenda[indexPath.row])
         return cell ?? UICollectionViewCell()
         
     }
@@ -327,6 +333,7 @@ extension ExplorarLocalViewController: UICollectionViewDelegate, UICollectionVie
 
         let cell = descansarCollectionView.dequeueReusableCell(withReuseIdentifier: "descansarCell", for: indexPath) as? DescansarCollectionViewCell
 //        cell?.configure(imagem: UIImage(named: "Rectangle 361") ?? UIImage(), lugar: "Descansar")
+        cell?.setup(with: jpDescansar[indexPath.row])
         return cell ?? UICollectionViewCell()
 
     }
@@ -339,13 +346,18 @@ extension ExplorarLocalViewController: UICollectionViewDelegate, UICollectionVie
 import SwiftUI
 
 @available(iOS 13, *)
-struct ExplorarLocalViewController_Preview: PreviewProvider {
+struct ExplorarJPViewController_Preview: PreviewProvider {
     static var previews: some View {
         // view controller using programmatic UI
         Group {
-            ExplorarLocalViewController().showPreview().previewDevice("iPhone SE (3rd generation)")
+            ExplorarJPViewController().showPreview().previewDevice("iPhone SE (3rd generation)")
             //            ViewController().showPreview().previewDevice("iPhone SE (3rd generation)").previewInterfaceOrientation(.landscapeLeft)
         }
     }
 }
 #endif
+
+    
+   
+
+
