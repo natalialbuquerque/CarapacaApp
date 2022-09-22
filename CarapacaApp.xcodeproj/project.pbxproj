@@ -43,6 +43,10 @@
 		EC58E08128D4A3FB000989B0 /* Onboarding3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E08028D4A3FB000989B0 /* Onboarding3View.swift */; };
 		EC58E08328D4A40E000989B0 /* Onboarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E08228D4A40E000989B0 /* Onboarding3ViewController.swift */; };
 		EC8491EC28DCDE2D00CE91EA /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8491EB28DCDE2D00CE91EA /* HomeModel.swift */; };
+		EC8491EE28DCEF1900CE91EA /* Home2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8491ED28DCEF1900CE91EA /* Home2View.swift */; };
+		EC8491F028DCEFC200CE91EA /* Home2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8491EF28DCEFC200CE91EA /* Home2ViewController.swift */; };
+		EC8491F428DCF39300CE91EA /* Custom2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8491F328DCF39300CE91EA /* Custom2CollectionViewCell.swift */; };
+		EC8491F628DCF3C800CE91EA /* Home2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8491F528DCF3C800CE91EA /* Home2Model.swift */; };
 		EC86F19428DC839B00E8C5B0 /* LugaresInfoCamaroesPotiguarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86F19328DC839B00E8C5B0 /* LugaresInfoCamaroesPotiguarViewController.swift */; };
 		EC86F19628DC83DE00E8C5B0 /* LugaresInfoCamaroesPotiguarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86F19528DC83DE00E8C5B0 /* LugaresInfoCamaroesPotiguarView.swift */; };
 		EC86F19828DC841F00E8C5B0 /* CamaroesPotiguarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86F19728DC841F00E8C5B0 /* CamaroesPotiguarCollectionViewCell.swift */; };
@@ -111,6 +115,10 @@
 		EC58E08028D4A3FB000989B0 /* Onboarding3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3View.swift; sourceTree = "<group>"; };
 		EC58E08228D4A40E000989B0 /* Onboarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3ViewController.swift; sourceTree = "<group>"; };
 		EC8491EB28DCDE2D00CE91EA /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		EC8491ED28DCEF1900CE91EA /* Home2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home2View.swift; sourceTree = "<group>"; };
+		EC8491EF28DCEFC200CE91EA /* Home2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home2ViewController.swift; sourceTree = "<group>"; };
+		EC8491F328DCF39300CE91EA /* Custom2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom2CollectionViewCell.swift; sourceTree = "<group>"; };
+		EC8491F528DCF3C800CE91EA /* Home2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home2Model.swift; sourceTree = "<group>"; };
 		EC86F19328DC839B00E8C5B0 /* LugaresInfoCamaroesPotiguarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugaresInfoCamaroesPotiguarViewController.swift; sourceTree = "<group>"; };
 		EC86F19528DC83DE00E8C5B0 /* LugaresInfoCamaroesPotiguarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugaresInfoCamaroesPotiguarView.swift; sourceTree = "<group>"; };
 		EC86F19728DC841F00E8C5B0 /* CamaroesPotiguarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaroesPotiguarCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -160,6 +168,7 @@
 				EC86F19928DC844A00E8C5B0 /* CamaroesPotiguarModel.swift */,
 				EC86F19D28DC8B3F00E8C5B0 /* DragaoModel.swift */,
 				EC8491EB28DCDE2D00CE91EA /* HomeModel.swift */,
+				EC8491F528DCF3C800CE91EA /* Home2Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,7 +211,9 @@
 			isa = PBXGroup;
 			children = (
 				EC58E05928D1F992000989B0 /* HomeView.swift */,
+				EC8491ED28DCEF1900CE91EA /* Home2View.swift */,
 				EC14BAF828D8D80900723735 /* CustomCollectionViewCell.swift */,
+				EC8491F328DCF39300CE91EA /* Custom2CollectionViewCell.swift */,
 				EC58E06C28D24953000989B0 /* NovaViagemView.swift */,
 				EC2810F728D4B14A00FB1272 /* SuaCidadeView.swift */,
 				EC58E07628D24AD3000989B0 /* ColocarDestinosView.swift */,
@@ -244,6 +255,7 @@
 			children = (
 				EC58E06428D1FEB1000989B0 /* MainTabBarViewController.swift */,
 				EC58E03528CD0EB8000989B0 /* HomeViewController.swift */,
+				EC8491EF28DCEFC200CE91EA /* Home2ViewController.swift */,
 				EC58E06A28D24942000989B0 /* NovaViagemViewController.swift */,
 				EC2810F928D4B16100FB1272 /* SuaCidadeViewController.swift */,
 				EC58E07228D249AE000989B0 /* ColocarDestinosViewController.swift */,
@@ -340,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC8491EE28DCEF1900CE91EA /* Home2View.swift in Sources */,
 				EC86F1A028DC8BA700E8C5B0 /* LugaresInfoDragaoView.swift in Sources */,
 				EC86F1A428DC8CDD00E8C5B0 /* LugaresInfoDragaoViewController.swift in Sources */,
 				EC14BAFB28D8DCA300723735 /* PrimeiroRoteiroView.swift in Sources */,
@@ -353,6 +366,7 @@
 				FC68A31028DC8082007224CA /* ExploreNatalViewController.swift in Sources */,
 				EC58E07F28D4A2B1000989B0 /* Onboarding2ViewController.swift in Sources */,
 				FCBD252528D8A12D00E27500 /* ExploreView.swift in Sources */,
+				EC8491F428DCF39300CE91EA /* Custom2CollectionViewCell.swift in Sources */,
 				EC14BAF928D8D80900723735 /* CustomCollectionViewCell.swift in Sources */,
 				FC68A31228DC8B03007224CA /* ExplorarFortalezaViewController.swift in Sources */,
 				EC2810F828D4B14A00FB1272 /* SuaCidadeView.swift in Sources */,
@@ -372,6 +386,7 @@
 				2EF7B46E28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift in Sources */,
 				FCBD252D28D8A15100E27500 /* PessoasCollectionViewCell.swift in Sources */,
 				2EF7B46628D2080C009E7A5B /* FavoritosViewController.swift in Sources */,
+				EC8491F628DCF3C800CE91EA /* Home2Model.swift in Sources */,
 				FCBD253B28D8A22E00E27500 /* DelegateExplorar.swift in Sources */,
 				FCBD252928D8A13C00E27500 /* ExploreLocalBotaoView.swift in Sources */,
 				FC9037EC28DB4A2200C903D6 /* RecifeModels.swift in Sources */,
@@ -396,6 +411,7 @@
 				FC68A30828DC7121007224CA /* ExplorarJPViewController.swift in Sources */,
 				FCBD252728D8A13500E27500 /* ExploreLocalView.swift in Sources */,
 				EC58E07128D24977000989B0 /* LugaresInfoPraianaBarViewController.swift in Sources */,
+				EC8491F028DCEFC200CE91EA /* Home2ViewController.swift in Sources */,
 				FCBD253928D8A19400E27500 /* LocalizacaoViewController.swift in Sources */,
 				FCBD253128D8A16300E27500 /* DescansarCollectionViewCell.swift in Sources */,
 				EC58E03428CD0EB8000989B0 /* SceneDelegate.swift in Sources */,
