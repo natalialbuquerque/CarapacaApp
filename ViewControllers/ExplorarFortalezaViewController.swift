@@ -13,7 +13,8 @@ class ExplorarFortalezaViewController: UIViewController {
     let scrollView =  UIScrollView()
     let contentView = UIView()
     let exploreLocalBotaoView = ExploreLocalBotaoView()
-
+    let exploreLocalBotaoViewContainer = UIView()
+    
     let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -168,32 +169,38 @@ class ExplorarFortalezaViewController: UIViewController {
         view.addSubview(exploreFortalezaView)
         view.addSubview(scrollView)
         view.addSubview(exploreLocalBotaoView)
-
+        
         scrollView.addSubview(contentView)
-
+        
         contentView.addSubview(stackView)
-
+        
         stackView.addArrangedSubview(stackViewTitle1)
         stackView.addArrangedSubview(pessoasCollectionView)
         stackView.addArrangedSubview(stackViewTitle2)
         stackView.addArrangedSubview(rendaCollectionView)
         stackView.addArrangedSubview(stackViewTitle3)
         stackView.addArrangedSubview(descansarCollectionView)
-
+        stackView.addArrangedSubview(exploreLocalBotaoViewContainer)
+        
         stackViewTitle1.addArrangedSubview(title3Label)
         stackViewTitle1.addArrangedSubview(verMais1Button)
-
+        
         stackViewTitle2.addArrangedSubview(title4Label)
         stackViewTitle2.addArrangedSubview(verMais2Button)
-
+        
         stackViewTitle3.addArrangedSubview(title5Label)
         stackViewTitle3.addArrangedSubview(verMais3Button)
+
 
 
     }
 
     func setupConstraints() {
-
+        exploreLocalBotaoViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            exploreLocalBotaoViewContainer.heightAnchor.constraint(equalToConstant: 100)
+        ])
+        
         exploreFortalezaView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             exploreFortalezaView.topAnchor.constraint(equalTo: view.topAnchor),

@@ -13,7 +13,8 @@ class ExplorarNatalViewController: UIViewController {
     let scrollView =  UIScrollView()
     let contentView = UIView()
     let exploreLocalBotaoView = ExploreLocalBotaoView()
-
+    let exploreLocalBotaoViewContainer = UIView()
+    
     let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -169,24 +170,25 @@ class ExplorarNatalViewController: UIViewController {
         view.addSubview(exploreNatalView)
         view.addSubview(scrollView)
         view.addSubview(exploreLocalBotaoView)
-
+        
         scrollView.addSubview(contentView)
-
+        
         contentView.addSubview(stackView)
-
+        
         stackView.addArrangedSubview(stackViewTitle1)
         stackView.addArrangedSubview(pessoasCollectionView)
         stackView.addArrangedSubview(stackViewTitle2)
         stackView.addArrangedSubview(rendaCollectionView)
         stackView.addArrangedSubview(stackViewTitle3)
         stackView.addArrangedSubview(descansarCollectionView)
-
+        stackView.addArrangedSubview(exploreLocalBotaoViewContainer)
+        
         stackViewTitle1.addArrangedSubview(title3Label)
         stackViewTitle1.addArrangedSubview(verMais1Button)
-
+        
         stackViewTitle2.addArrangedSubview(title4Label)
         stackViewTitle2.addArrangedSubview(verMais2Button)
-
+        
         stackViewTitle3.addArrangedSubview(title5Label)
         stackViewTitle3.addArrangedSubview(verMais3Button)
 
@@ -194,6 +196,10 @@ class ExplorarNatalViewController: UIViewController {
     }
 
     func setupConstraints() {
+        exploreLocalBotaoViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            exploreLocalBotaoViewContainer.heightAnchor.constraint(equalToConstant: 100)
+        ])
 
         exploreNatalView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

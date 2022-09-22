@@ -13,6 +13,7 @@ class ExplorarJPViewController: UIViewController {
     let scrollView =  UIScrollView()
     let contentView = UIView()
     let exploreLocalBotaoView = ExploreLocalBotaoView()
+    let exploreLocalBotaoViewContainer = UIView()
     
     let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -180,6 +181,7 @@ class ExplorarJPViewController: UIViewController {
         stackView.addArrangedSubview(rendaCollectionView)
         stackView.addArrangedSubview(stackViewTitle3)
         stackView.addArrangedSubview(descansarCollectionView)
+        stackView.addArrangedSubview(exploreLocalBotaoViewContainer)
         
         stackViewTitle1.addArrangedSubview(title3Label)
         stackViewTitle1.addArrangedSubview(verMais1Button)
@@ -191,9 +193,15 @@ class ExplorarJPViewController: UIViewController {
         stackViewTitle3.addArrangedSubview(verMais3Button)
         
         
+        
+        
     }
     
     func setupConstraints() {
+        exploreLocalBotaoViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            exploreLocalBotaoViewContainer.heightAnchor.constraint(equalToConstant: 100)
+        ])
         
         exploreJPView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -207,7 +215,7 @@ class ExplorarJPViewController: UIViewController {
             exploreLocalBotaoView.heightAnchor.constraint(equalToConstant: 95),
             exploreLocalBotaoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             exploreLocalBotaoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            exploreLocalBotaoView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            exploreLocalBotaoView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -215,7 +223,7 @@ class ExplorarJPViewController: UIViewController {
             scrollView.topAnchor.constraint(equalTo: exploreJPView.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: exploreLocalBotaoView.bottomAnchor), 
+            scrollView.bottomAnchor.constraint(equalTo: exploreLocalBotaoView.bottomAnchor, constant: 0),
         ])
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
