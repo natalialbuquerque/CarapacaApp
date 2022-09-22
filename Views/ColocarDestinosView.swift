@@ -245,7 +245,9 @@ class ColocarDestinosView: UIView {
         title2Label.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.34, alpha: 1.00)
         title2Label.font = FontKit.roundedFont(ofSize: 12, weight: .regular)
         
-        roteiroTextField1.placeholder = "    Escolha uma cidade  "
+//        roteiroTextField1.placeholder = "João Pessoa"
+        roteiroTextField1.text = "João Pessoa"
+        
         roteiroTextField1.font = FontKit.roundedFont(ofSize: 15, weight: .regular)
         roteiroTextField1.backgroundColor = UIColor.white
         roteiroTextField1.layer.cornerRadius = 12

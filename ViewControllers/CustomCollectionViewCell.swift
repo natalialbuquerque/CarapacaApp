@@ -11,7 +11,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     static let identifier = "CustomCollectionViewCell"
     let novaViagem = NovaViagemView()
     
-    private let myImageView: UIImageView = {
+    let myImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "bag.fill")
         imageView.contentMode = .scaleAspectFit
@@ -19,9 +19,10 @@ class CustomCollectionViewCell: UICollectionViewCell {
         return imageView
     } ()
      
-    private let myLabel: UILabel = {
+    let myLabel: UILabel = {
         let label = UILabel()
-        label.text = "."
+        label.text = "Mochilao Grandao MESMO"
+        label.numberOfLines = 2
         label.textAlignment = .left
         label.clipsToBounds = true
         label.font = UIFont.boldSystemFont(ofSize: 15)
@@ -30,68 +31,81 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     let imageViewContainer = UIView()
     let labelContainer = UIView()
-    let stackView = UIStackView()
+    
+    let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillProportionally
+        stackView.alignment = .leading
+        stackView.spacing = 0
+        return stackView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        contentView.backgroundColor = .systemRed
-        
         setupHierarchy()
-//        setupConstraints()
+        setupConstraints()
     }
-    
-    func setupHierarchy(){
-        contentView.addSubview(myLabel)
-        contentView.addSubview(myImageView )
-        
-        stackView.addArrangedSubview(imageViewContainer)
-        stackView.addArrangedSubview(labelContainer)
-        
-//        labelContainer.addSubview(myLabel)
-//        imageViewContainer.addSubview(myImageView)
-    }
-    
-//    func setupConstraints(){
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            stackView.topAnchor.constraint(equalTo: self.topAnchor),
-//            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//            stackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
-//        ])
-//
-//        myLabel.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            myLabel.leadingAnchor.constraint(equalTo: labelContainer.leadingAnchor),
-//            myLabel.trailingAnchor.constraint(equalTo: labelContainer.trailingAnchor),
-//
-//        ])
-//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        myLabel.frame = CGRect(x: 0,
-                               y: contentView.frame.size.height-50,
-                               width: contentView.frame.size.width-10,
-                               height: 50)
-        myImageView.frame = CGRect(x: 0,
-                               y: 0,
-                               width: contentView.frame.size.width-10,
-                               height: contentView.frame.size.height-50)
+    func setupHierarchy(){
+        contentView.addSubview(stackView)
+        
+        stackView.addArrangedSubview(myImageView)
+        stackView.addArrangedSubview(myLabel)
+    }
+    func setupConstraints(){
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+        myImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            myImageView.topAnchor.constraint(equalTo: stackView.topAnchor),
+            myImageView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            myImageView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            myImageView.bottomAnchor.constraint(equalTo: myLabel.topAnchor)
+        ])
+        
+        myLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            myLabel.topAnchor.constraint(equalTo: myImageView.bottomAnchor),
+            myLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            myLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            myLabel.bottomAnchor.constraint(equalTo: stackView.bottomAnchor)
+        ])
     }
     
-    public func configure(label: String){
-        myLabel.text = label
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        myImageView.frame = CGRect(x: 0, y: 0, width: 164, height: 113)
+        myLabel.frame = CGRect(x: 0, y: 0, width: 163, height: 19)
+        
     }
+    
+//    public func configure(label: String){
+//        myLabel.text = label
+//    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        myLabel.text = nil
+//        myLabel.text = nil
     }
+    
+    func setup(with local: HomeModel) {
+        myImageView.image = local.imagem
+        myLabel.text = local.texto
+    }
+    
 }
 // MARK: - Preview
 #if DEBUG

@@ -1,43 +1,39 @@
 //
-//  ViewController.swift
+//  Home2ViewController.swift
 //  CarapacaApp
 //
-//  Created by Natália Pessoa de Azevedo Albuquerque on 10/09/22.
+//  Created by Natália Pessoa de Azevedo Albuquerque on 22/09/22.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class Home2ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
-    let homeView = HomeView()
+    let home2View = Home2View()
     weak var delegate: HomeViewDelegate?
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.tabBarController?.tabBar.isHidden = false
         
-        self.view = homeView
-        homeView.delegate = self
+        self.view = home2View
+        home2View.delegate = self
         
-        homeView.meusRoteirosCollectionView.dataSource = self
-        homeView.meusRoteirosCollectionView.delegate = self
+        home2View.meusRoteiros2CollectionView.dataSource = self
+        home2View.meusRoteiros2CollectionView.delegate = self
         
         setupAdditionalConfiguration()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier , for: indexPath) as! CustomCollectionViewCell
-        let cell = homeView.meusRoteirosCollectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as? CustomCollectionViewCell
-//        cell.configure(label: "Custom \(indexPath.row)")
-        cell?.setup(with: homeRoteiros[indexPath.row])
+        let cell = home2View.meusRoteiros2CollectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as? CustomCollectionViewCell
+        cell?.setup(with: home2Roteiros[indexPath.row])
         return cell ?? UICollectionViewCell()
-//        return cell
     }
     
     
@@ -45,7 +41,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func setupAdditionalConfiguration(){
          // MARK: - Outras configurações
-        homeView.criarRoteiroButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+        home2View.criarRoteiroButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
     }
     
 
@@ -61,7 +57,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
 }
 
-extension HomeViewController: HomeViewDelegate{
+extension Home2ViewController: HomeViewDelegate{
     func criarRoteiro() {
         print("Deve aparecer a próxima página")
         
@@ -72,11 +68,11 @@ extension HomeViewController: HomeViewDelegate{
 import SwiftUI
 
 @available(iOS 13, *)
-struct HomeViewController_Preview: PreviewProvider {
+struct Home2ViewController_Preview: PreviewProvider {
     static var previews: some View {
         // view controller using programmatic UI
         Group {
-            HomeViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.portrait)
+            Home2ViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.portrait)
             //            ViewController().showPreview().previewDevice("iPhone SE (3rd generation)").previewInterfaceOrientation(.landscapeLeft)
         }
     }

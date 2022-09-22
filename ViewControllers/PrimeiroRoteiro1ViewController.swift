@@ -11,11 +11,12 @@ class PrimeiroRoteiro1ViewController: UIViewController {
     let primeiroRoteiro1View = PrimeiroRoteiro1View()
     
     let data = ["João Pessoa", "Natal", "Fortaleza"]
-
+    weak var delegate: HomeViewDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view = primeiroRoteiro1View
+        setupAdditionalConfiguration()
         
         primeiroRoteiro1View.destinoTableView.delegate = self
         primeiroRoteiro1View.destinoTableView.dataSource = self
@@ -127,6 +128,19 @@ extension PrimeiroRoteiro1ViewController: UITableViewDelegate, UITableViewDataSo
                         let explorarTela = ExplorarFortalezaViewController()
                               self.navigationController?.pushViewController(explorarTela, animated: true)
                     }
+    }
+    
+//    botaoConcluido
+    func setupAdditionalConfiguration(){
+         // MARK: - Outras configurações
+        primeiroRoteiro1View.botaoConcluido.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+    }
+
+    @objc func tappedButton(sender: UIButton){
+        delegate?.criarRoteiro()
+        
+        let home2 = Home2ViewController()
+        navigationController?.pushViewController(home2, animated: true)
     }
     
 }

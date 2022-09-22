@@ -15,12 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
-//        let homeNC = UINavigationController(rootViewController: HomeViewController())
-//        let favoritosNC = UINavigationController(rootViewController: FavoritosViewController())
-//
-//        let tabbar = MainTabBarViewController()
-//        tabbar.viewControllers = [homeNC, favoritosNC ]
         
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = MainTabBarViewController()
