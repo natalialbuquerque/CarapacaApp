@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E3A543728DB4F93002A575D /* PrimeiroRoteiroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3A543628DB4F93002A575D /* PrimeiroRoteiroTableViewCell.swift */; };
 		2EF7B46628D2080C009E7A5B /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7B46528D2080C009E7A5B /* FavoritosViewController.swift */; };
 		2EF7B46828D20816009E7A5B /* FavoritosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7B46728D20816009E7A5B /* FavoritosTableViewCell.swift */; };
 		2EF7B46E28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7B46D28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E3A543628DB4F93002A575D /* PrimeiroRoteiroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeiroRoteiroTableViewCell.swift; sourceTree = "<group>"; };
 		2EF7B46528D2080C009E7A5B /* FavoritosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		2EF7B46728D20816009E7A5B /* FavoritosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewCell.swift; sourceTree = "<group>"; };
 		2EF7B46D28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeiroRoteiroViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				EC58E06A28D24942000989B0 /* NovaViagemViewController.swift */,
 				EC2810F928D4B16100FB1272 /* SuaCidadeViewController.swift */,
 				EC58E07228D249AE000989B0 /* ColocarDestinosViewController.swift */,
+				2E3A543628DB4F93002A575D /* PrimeiroRoteiroTableViewCell.swift */,
 				2EF7B46D28D3F4FF009E7A5B /* PrimeiroRoteiroViewController.swift */,
 				EC58E07028D24977000989B0 /* LugaresInfoViewController.swift */,
 				EC58E07428D24A20000989B0 /* ConstrucaoDoRoteiroViewController.swift */,
@@ -309,6 +312,7 @@
 				2EF7B46628D2080C009E7A5B /* FavoritosViewController.swift in Sources */,
 				FCBD253B28D8A22E00E27500 /* DelegateExplorar.swift in Sources */,
 				FCBD252928D8A13C00E27500 /* ExploreLocalBotaoView.swift in Sources */,
+				2E3A543728DB4F93002A575D /* PrimeiroRoteiroTableViewCell.swift in Sources */,
 				EC58E06F28D2496F000989B0 /* LugaresInfoView.swift in Sources */,
 				EC58E06528D1FEB1000989B0 /* MainTabBarViewController.swift in Sources */,
 				EC58E08128D4A3FB000989B0 /* Onboarding3View.swift in Sources */,

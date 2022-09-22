@@ -113,6 +113,9 @@ class FavoritosViewController: UIViewController {
             cell.lugarLabel.text = nome
             cell.cidadeLabel.text = cidade
             cell.lugarImageView.image = UIImage(named: nome)
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = UIColor.white
+            cell.selectedBackgroundView = bgColorView
             return cell
         }
         
